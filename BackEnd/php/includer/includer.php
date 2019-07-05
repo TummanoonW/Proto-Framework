@@ -14,6 +14,7 @@
             }
         }
 
+        //An instant-includer specified for class FunAuth
         public static function include_auth(){
             self::include_config();
             self::include_structure();

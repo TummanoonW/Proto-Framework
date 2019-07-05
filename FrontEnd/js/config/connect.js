@@ -1,4 +1,4 @@
-//Proto Framework for HTML5-Javascript
+//Proto Framework for Javascript-SessionStorage
 //v2.0
 //Developed by Tummanoon Wacha-em
 
