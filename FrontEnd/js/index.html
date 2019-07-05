@@ -8,16 +8,23 @@
 </head>
 <body>
     <form  enctype="multipart/form-data" id="form">
-        <input id="a" type="text" placeholder="Say a word" width="400">
+        <input id="a" type="text" placeholder="say a word" width="400">
     </form>
     <button onclick="add()">Send</button>
 
-    <br>
+    <br><br>
 
     <form  enctype="multipart/form-data" id="form">
         <input id="id" type="number" placeholder="id to remove" width="400">
     </form>
     <button onclick="remove()">remove</button>
+
+    <br><br>
+
+    <form  enctype="multipart/form-data" id="form">
+        <input id="query" type="text" placeholder="search text" width="400">
+    </form>
+    <button onclick="search()">search</button>
 
     <!-- Include connect.js to operate-->
     <script src="./config/connect.js"></script>
@@ -65,6 +72,14 @@
             await conn.removeFromDB(dbname, id);
 
             update(id);
+        }
+
+        async function search(){
+            let el = document.querySelector('#query');
+            let query = el.value;
+
+            let arr = await conn.getWhereDB(dbname, {a: query});
+            console.log("QUERY", arr);
         }
         
     </script>
