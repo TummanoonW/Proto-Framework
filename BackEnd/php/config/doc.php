@@ -1,5 +1,6 @@
 <?php
 
+    //a parent class for being extended to other classes as data model
     class Doc{
         public $ID;
 
