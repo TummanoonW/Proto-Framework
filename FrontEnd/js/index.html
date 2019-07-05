@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form  enctype="multipart/form-data" id="form">
+        <input id="a" type="text" placeholder="Say a word" width="400">
+    </form>
+    <button onclick="add()">Send</button>
+
+    <br>
+
+    <form  enctype="multipart/form-data" id="form">
+        <input id="id" type="number" placeholder="id to remove" width="400">
+    </form>
+    <button onclick="remove()">remove</button>
+
+    <script src="./config/connect.js"></script>
+    <script>
+        let conn = Connect();
+        let dbname = "testK";
+        let obj = {a: "hello"};
+
+        async function update(id){
+            let ob = await conn.getObject(id);
+            console.log("LAST_OBJ", ob);
+
+            let arr = await conn.getDB(dbname);
+            console.log("DB", arr);
+        }
+
+        async function add(){
+            let a = document.querySelector('#a');
+            let obj = {a: a.value};
+
+            let id = await conn.addToDB(dbname, obj);
+            console.log("LAST_ID", id);
+
+            update(id);
+        }
+
+        async function remove(){
+            let el = document.querySelector('#id');
+            let id = Number(el.value);
+            await conn.removeFromDB(dbname, id);
+
+            update(id);
+        }
+        
+    </script>
+</body>
+</html>
