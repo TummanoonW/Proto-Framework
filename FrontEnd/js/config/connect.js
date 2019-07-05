@@ -1,7 +1,13 @@
+//Proto Framework for HTML5-Javascript
+//v2.0
+//Developed by Tummanoon Wacha-em
+
 function Connect(){
     let conn = {
-        dbLastID: 'lastID',
-        getIDs: function(db){
+        dbLastID: 'lastID', //ID generator database name
+
+        //get a series of ID from given database name 
+        getIDs: function(db){ 
             return new Promise(function(resolve, reject){
                 var s = sessionStorage.getItem(db);
                 var arr = [];
@@ -11,6 +17,8 @@ function Connect(){
                 resolve(arr);
             });
         },
+
+        //get a series of Objects from given database name 
         getDB: function(db){
             return new Promise((resolve, reject) => {
                 this.getIDs(db).then(arr => {
@@ -24,6 +32,8 @@ function Connect(){
                 });
             });
         },
+
+        //add an Object (also generate ID) to given database name 
         addToDB: function(db, obj){
             return new Promise((resolve, reject) => {
                 this.getIDs(db).then(arr => {
@@ -39,6 +49,8 @@ function Connect(){
                 });
             });
         },
+
+        //remove an Object using its ID from given database name 
         removeFromDB: function(db, id){
             return new Promise((resolve, reject) => {
                 this.getIDs(db).then(arr => {
@@ -58,6 +70,8 @@ function Connect(){
                 });
             });
         },
+
+        //get an Object using its ID
         getObject: function(id){
             return new Promise((resolve, reject) => {
                 let str = sessionStorage.getItem(id);
@@ -68,24 +82,32 @@ function Connect(){
                 resolve(obj);
             });
         },
+
+        //add or update an Object using its ID
         setObject: function(id, obj){
             return new Promise((resolve, reject) => {
                 sessionStorage.setItem(id, JSON.stringify(obj));
                 resolve(obj);
             });
         },
+
+        //remove an Object using its ID
         removeObject: function(id){
             return new Promise((resolve, reject) => {
                 sessionStorage.removeItem(id);
                 resolve(null);
             });
         },
+
+        //generate ID
         genID: function(){
             var id = this.getLastID();
             id = id + 1;
             sessionStorage.setItem(this.dbLastID, id);
             return id;
         },
+
+        //get latest generated ID
         getLastID: function(){
             var id = sessionStorage.getItem(this.dbLastID);
             if(id == null) id = 0;
