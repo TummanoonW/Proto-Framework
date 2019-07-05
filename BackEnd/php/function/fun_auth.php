@@ -20,6 +20,12 @@
             $password_hash = md5($password);
             $query = "SELECT * FROM " . self::$table . " WHERE email='" . $email . "' AND password_hash='" . $password_hash . "'";
             $result = $conn->querySingle($query);
+
+            if($result->response == NULL){
+                //This function has called one of Err's preset
+                $result->setResult(FALSE, NULL, Err::$ERR_WRONG_AUTH);
+            }
+
             return $result;
         }
     }
