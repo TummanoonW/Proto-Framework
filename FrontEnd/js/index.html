@@ -32,15 +32,20 @@
             {a: "sceptiscism"}
         ];
 
-        let ids = conn.addManyToDB(dbname, objs).then(resolve => {
-            console.log("IDS", resolve);
+        let ids = conn.addManyToDB(dbname, objs).then(arr => {
+            console.log("IDS", arr);
+            update(arr[0]);
+        });
+
+        conn.getWhereDB(dbname, {a: "hello"}).then(arr => {
+            console.log("QUERY", arr);
         });
 
         async function update(id){
             let ob = await conn.getObject(id);
             console.log("LAST_OBJ", ob);
 
-            let arr = await conn.getDB(dbname).all();
+            let arr = await conn.getDB(dbname);
             console.log("DB", arr);
         }
 

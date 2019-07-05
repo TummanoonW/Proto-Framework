@@ -1,7 +1,5 @@
-import { promises } from "fs";
-
 //Proto Framework for Javascript-SessionStorage
-//v2.0
+//v2.1
 //Developed by Tummanoon Wacha-em
 
 function Connect(){
@@ -22,53 +20,51 @@ function Connect(){
 
         //get a series of Objects from given database name 
         getDB: function(db){
-            return {
-                where: async function(query){
-                    return new Promise((resolve, reject) => {
-                        var arr1 = await this.all();
-                        var arr2 = [];
-                        var boo = false;
-                        try{
-                            for(key in query){
-                                if(boo){
-                                    arr1 = [];
-                                    await arr2.forEach(async obj => {
-                                        if(obj[key] == query[key]){
-                                            await arr1.push(obj);
-                                        }
-                                    });
-                                    arr2 = arr1;
-                                }else{
-                                    arr2 = [];
-                                    await arr1.forEach(async obj => {
-                                        if(obj[key] == query[key]){
-                                            await arr2.push(obj);
-                                        }
-                                    });
-                                    arr1 = arr2;
-                                }
-                                boo = !boo;
-                            }
-                            resolve(arr1);
-                        }catch(e){
-                            reject(e);
-                        }
-                    });
-                },
-                all: function(){
-                    return new Promise((resolve, reject) => {
-                        this.getIDs(db).then(arr => {
-                            var objs = [];
-                            arr.forEach(id => {
-                                this.getObject(id).then(obj => {
-                                    objs.push(obj);
-                                });
-                            });
-                            resolve(objs);
+            return new Promise((resolve, reject) => {
+                this.getIDs(db).then(arr => {
+                    var objs = [];
+                    arr.forEach(id => {
+                        this.getObject(id).then(obj => {
+                            objs.push(obj);
                         });
                     });
+                    resolve(objs);
+                });
+            });
+        },
+
+        //get a series of Objects filtered by query from given database name 
+        getWhereDB: function(db, query){
+            return new Promise(async (resolve, reject) => {
+                var arr1 = await this.getDB(db);
+                var arr2 = [];
+                var boo = false;
+                try{
+                    for(key in query){
+                        if(boo){
+                            arr1 = [];
+                            await arr2.forEach(async obj => {
+                                if(obj[key] == query[key]){
+                                    await arr1.push(obj);
+                                }
+                            });
+                            arr2 = arr1;
+                        }else{
+                            arr2 = [];
+                            await arr1.forEach(async obj => {
+                                if(obj[key] == query[key]){
+                                    await arr2.push(obj);
+                                }
+                            });
+                            arr1 = arr2;
+                        }
+                        boo = !boo;
+                    }
+                    resolve(arr1);
+                }catch(e){
+                    reject(e);
                 }
-            };
+            });
         },
 
         //add an Object (also generate ID) to given database name 
