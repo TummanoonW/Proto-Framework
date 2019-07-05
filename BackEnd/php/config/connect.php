@@ -6,6 +6,7 @@
         private $db; //database you want to connect
         private $conn; 
 
+        //setup database connection when an Object is being construct
         function __construct(){
             $this->host = "localhost";
             $this->username = "root";
