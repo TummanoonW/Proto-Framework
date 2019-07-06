@@ -30,4 +30,34 @@
 
             return $result;
         }
+
+        public static function register($conn, $form){
+            $auth = new Auth($form); //objectified/encapsulate formData to Auth
+
+            //check if this email is already existed in auth table
+            $result = self::getAuthByEmail($conn, $auth->email);
+            if($result->response == NULL){ //if not, continue the process
+                $query = $auth->getInsertIntoQuery(self::$table); //generate query script for insertion
+                $result = $conn->queryResult($query);
+                //if succeed, return Result +inserted auth
+                if($result->success){ 
+                    $ID = $conn->getLastID();
+                    $auth->ID = $ID;
+                    $result->setResult(TRUE, $auth, NULL);
+                }
+            }else{
+                $result->setResult(FALSE, NULL, Err::$ERR_USER_EXISTED);
+            }
+
+            return $result;
+        }
+
+        public static function editProfile($conn, $form){
+            $auth = new Auth($form); //objectified/encapsulate formData to Auth
+
+            $query = $auth->getUpdateQuery(self::$table);
+            $result = $conn->queryResult($query);
+
+            return $result;
+        }
     }

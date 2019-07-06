@@ -5,13 +5,7 @@
         public $ID;
 
         function __construct($obj){
-            $this->parseJSON($obj);
-        }
-
-        public function parseJSON($obj){
-            if($obj != NULL){
-                $this->ID = $obj->ID;
-            }
+            if(isset($obj->ID))$this->ID = $obj->ID;
         }
 
         public function toJSON(){

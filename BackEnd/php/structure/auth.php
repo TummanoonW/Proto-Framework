@@ -6,6 +6,7 @@
         public $password_hash;
         public $username;
         public $profile_pic;
+        public $apiKey;
         
         function __construct($obj){
             parent::__construct($obj);
@@ -13,12 +14,34 @@
         }
 
         public function parseJSON($obj){
-            if($obj != NULL){
-                $this->email = $obj->email;
+            if(isset($obj->email))$this->email = $obj->email;
+            if(isset($obj->password_hash)){
                 $this->password_hash = $obj->password_hash;
-                $this->username = $obj->username;
-                $this->profile_pic = $obj->profile_pic;
+            }else{
+                if(isset($obj->password))$this->password_hash = md5($obj->password);
             }
+            if(isset($obj->username))$this->username = $obj->username;
+            if(isset($obj->profile_pic))$this->profile_pic = $obj->profile_pic;
+            if(isset($obj->apiKey)){
+                $this->apiKey = $obj->apiKey;
+            }else{
+                if(isset($this->email))$this->apiKey = md5($this->email);
+            }
+        }
+
+        //check if certain variables are fullfil
+        public function validate(){
+            return ($this->email != NULL && $this->password_hash != NULL && $this->username != NULL);
+        }
+
+        //generate query script for insertion
+        public function getInsertIntoQuery($table){
+            return "INSERT INTO " . $table . " (ID, email, password_hash, username, profile_pic, apiKey) VALUES (NULL, '" . $this->email . "', '" . $this->password_hash . "', '" . $this->username . "', '" . $this->profile_pic . "', '" . $this->apiKey . "')";
+        }
+
+        //generate query script for update
+        public function getUpdateQuery($table){
+            return "UPDATE " . $table . " SET username='" . $this->username . "', profile_pic='" . $this->profile_pic . "' WHERE ID=" . $this->ID;
         }
 
         public function toJSON(){
