@@ -29,4 +29,6 @@
                 $io->output($result); //output as JSON
             }
         }
+
+        $conn->closeConn(); //close connection
     }
