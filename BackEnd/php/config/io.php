@@ -38,6 +38,7 @@
             }
         }
 
+        //echo a given Object or Array in JSON format as string
         public function output($obj){
             echo json_encode($obj);
         }

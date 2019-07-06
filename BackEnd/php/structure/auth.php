@@ -8,11 +8,14 @@
         public $profile_pic;
         public $apiKey;
         
+        //construct both itself and the parent class it extends
         function __construct($obj){
             parent::__construct($obj);
             $this->parseJSON($obj);
         }
 
+        //savely initialize data for each variables
+        //if certain variables is not set at the first place, it will be initialize as NULL or some default value
         public function parseJSON($obj){
             if(isset($obj->email))$this->email = $obj->email;
             if(isset($obj->password_hash)){
@@ -44,6 +47,7 @@
             return "UPDATE " . $table . " SET username='" . $this->username . "', profile_pic='" . $this->profile_pic . "' WHERE ID=" . $this->ID;
         }
 
+        //return this object as JSON string
         public function toJSON(){
             return json_encode($this);
         }
