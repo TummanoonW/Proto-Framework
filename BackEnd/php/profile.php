@@ -1,6 +1,6 @@
 <?php
     //Proto Framework for PHP-MySQL
-    //v2.2
+    //v2.3
     //Developed by Tummanoon Wacha-em
 
     include './includer/includer.php'; //include Includer file to operate

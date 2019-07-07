@@ -3,7 +3,6 @@
         public $method;
         public $query;
         public $post;
-        public $put;
 
         function __construct(){
             //use method 'GET' protocol 'm' as specified method client wants to use
@@ -21,21 +20,15 @@
                 $this->query = new StdClass();
             }
 
-            //use method 'POST' protocol 'p' as JSON to post anything
-            if(isset($_POST['p'])){
-                $p = $_POST['p'];
+            //use method 'POST/PUT' (aka 'input') as JSON to post anything
+            if(file_get_contents('php://input') != NULL){
+                $p = file_get_contents('php://input');
                 $this->post = json_decode($p);
             }else{
                 $this->post = new StdClass();
             }
 
-            //use method 'PUT' protocol 'p' as JSON to post anything
-            if(isset($_PUT['p'])){
-                $p = $_PUT['p'];
-                $this->put = json_decode($p);
-            }else{
-                $this->put = new StdClass();
-            }
+
         }
 
         //echo a given Object or Array in JSON format as string

@@ -26,6 +26,9 @@
                 $this->closeConn();
                 $err = $this->getErr();
                 $result->setResult(FALSE, NULL, $err);
+
+                //show error if connection fails
+                echo json_encode($result);
             }
             return $result;
         }
@@ -42,7 +45,8 @@
 
         //objectified mysqli errors and return as Err
         public function getErr(){
-            return Err::genErr(mysqli_connect_errno(), mysqli_connect_error());
+            //return Err::genErr(mysqli_connect_errno(), mysqli_connect_error());
+            return Err::$ERR_CONN_FAILED;
         }
 
         //query and return Result
