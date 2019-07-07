@@ -1,18 +1,13 @@
 <?php
     class Connect{
-        private $host; //ip address or hostname
-        private $username; 
-        private $password;
-        private $db; //database you want to connect
-        private $conn; 
+        private $host = "localhost"; //ip address or hostname
+        private $username = "root"; 
+        private $password = "";
+        private $db = "test"; //database you want to connect
+        private $conn; //MySQLi Connection
 
         //setup database connection when an Object is being construct
         function __construct(){
-            $this->host = "localhost";
-            $this->username = "root";
-            $this->password = "";
-            $this->db = "test";
-
             $this->conn = mysqli_connect($this->host, $this->username, $this->password, $this->db);
         }
 
@@ -40,7 +35,7 @@
 
         //close Connection
         public function closeConn(){
-            return mysqli_close($this->conn);
+            mysqli_close($this->conn);
         }
 
         //objectified mysqli errors and return as Err

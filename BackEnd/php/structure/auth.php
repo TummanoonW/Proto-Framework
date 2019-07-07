@@ -32,6 +32,11 @@
             }
         }
 
+        //return this object as JSON string
+        public function toJSON(){
+            return json_encode($this);
+        }
+
         //check if certain variables are fullfil
         public function validate(){
             return ($this->email != NULL && $this->password_hash != NULL && $this->username != NULL);
@@ -45,10 +50,5 @@
         //generate query script for update
         public function getUpdateQuery($table){
             return "UPDATE " . $table . " SET username='" . $this->username . "', profile_pic='" . $this->profile_pic . "' WHERE ID=" . $this->ID;
-        }
-
-        //return this object as JSON string
-        public function toJSON(){
-            return json_encode($this);
         }
     }

@@ -1,6 +1,6 @@
 <?php
     class FunAuth{
-        public static $table = "auth"; //table name
+        private static $table = "auth"; //table name
 
         //---- These are instant-functions wrapped inside a class - just to be tracable and quick-usable ---
 
