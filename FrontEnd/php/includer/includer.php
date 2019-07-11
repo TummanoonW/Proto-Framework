@@ -18,12 +18,15 @@
             }
         }
 
+
+        //Include all files within 'component' directory
         public static function include_component($dir){
             foreach (glob($dir . "component/*.php") as $filename){
                 include_once $filename;
             }
         }
 
+        //Include Proto-Framework Infastructure
         public static function include_proto($dir){
             if(!isset($dir)){
                 $dir = "./";
