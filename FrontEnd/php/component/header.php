@@ -1,5 +1,5 @@
 <?php 
-    class Header{
+    class Header{ //header elements loader
 
         public static function initHeader($title){
 ?>

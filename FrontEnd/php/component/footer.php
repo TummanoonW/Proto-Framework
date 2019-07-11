@@ -1,5 +1,5 @@
 <?php
-    class Footer{
+    class Footer{ //footer elements loader
 
         public static function initFooter(){
 ?>

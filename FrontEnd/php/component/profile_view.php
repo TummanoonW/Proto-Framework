@@ -1,5 +1,5 @@
 <?php
-    class ProfileView{
+    class ProfileView{ ////profile HTML elements loader
 
         public static function initView($auth){
 ?>

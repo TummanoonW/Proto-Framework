@@ -1,5 +1,5 @@
 <?php
-    class Sidemenu{
+    class Sidemenu{ //sidemenu HTML elements loader
 
         public static function initAppSettingsFAB(){
 ?>

@@ -1,5 +1,5 @@
 <?php
-    class Toolbar{
+    class Toolbar{ ////common toolbar HTML elements loader
 
         public static function initToolbar(){
             $auth = Session::getAuth();

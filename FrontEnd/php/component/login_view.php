@@ -1,5 +1,5 @@
 <?php
-    class LoginView{
+    class LoginView{ //login HTML elements loader
 
         public static function initView(){
 ?>
