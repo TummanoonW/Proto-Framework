@@ -1,9 +1,10 @@
 <?php
     //Proto Framework for PHP-MySQL
-    //v2.3
+    //v2.5
     //Developed by Tummanoon Wacha-em
 
     include './includer/includer.php'; //include Includer file to operate
+    Includer::include_proto();
     Includer::include_auth(); //call a specified-function that would trigger include-effect
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 

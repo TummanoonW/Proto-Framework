@@ -18,10 +18,13 @@
             }
         }
 
-        //An instant-includer specified for class FunAuth
-        public static function include_auth(){
+        public static function include_proto(){
             self::include_config();
             self::include_structure();
+        }
+
+        //An instant-includer specified for class FunAuth
+        public static function include_auth(){
             include_once './function/fun_auth.php';
         }
 

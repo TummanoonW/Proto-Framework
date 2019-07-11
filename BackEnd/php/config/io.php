@@ -17,7 +17,7 @@
                 $q = $_GET['q'];
                 $this->query = json_decode($q);
             }else{
-                $this->query = new StdClass();
+                $this->query = NULL;
             }
 
             //use method 'POST/PUT' (aka 'input') as JSON to post anything
@@ -25,7 +25,7 @@
                 $p = file_get_contents('php://input');
                 $this->post = json_decode($p);
             }else{
-                $this->post = new StdClass();
+                $this->post = NULL;
             }
 
 

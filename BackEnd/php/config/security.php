@@ -14,7 +14,14 @@
             if(isset($_GET['apiKey'])){
                 $this->apiKey = $_GET['apiKey'];
                 $query = "SELECT * FROM " . self::$table . " WHERE apiKey='" . $this->apiKey . "'";
-                $result = $this->conn->queryResult($query);
+                $result = $this->conn->querySingle($query);
+
+                if($result->response == NULL){
+                    $result->setResult(FALSE, NULL, Err::$ERR_UNAUTH_APIKEY);
+
+                    //show error if security fails
+                    echo json_encode($result);
+                }
             }else{
                 $result->setResult(FALSE, NULL, Err::$ERR_NO_APIKEY);
 

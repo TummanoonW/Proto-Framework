@@ -3,7 +3,7 @@
         private $host = "localhost"; //ip address or hostname
         private $username = "root"; 
         private $password = "";
-        private $db = "test"; //database you want to connect
+        private $db = "proto"; //database you want to connect
         private $conn; //MySQLi Connection
 
         //setup database connection when an Object is being construct
@@ -48,7 +48,7 @@
         public function queryResult($query){
             $r = mysqli_query($this->getConn(), $query);
             $result = new Result();
-            if($r){
+            if($r || $r != NULL){
                 $result->setResult(TRUE, $r, NULL);
             }else{
                 $err = $this->getErr();
