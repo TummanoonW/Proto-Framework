@@ -1,7 +1,7 @@
 <?php
     class ProfileView{ ////profile HTML elements loader
 
-        public static function initView($auth){
+        public static function initView($dir, $auth){
 ?>
             <body class=" layout-fluid">
 
@@ -43,7 +43,7 @@
                                         </ul>
                                         <div class="tab-content card-body">
                                             <div class="tab-pane active" id="first">
-                                                <form action="./route/profile.php" method="POST" class="form-horizontal">
+                                                <form action="<?php Nav::printURL($dir, 'route/profile.php'); ?>" method="POST" class="form-horizontal">
                                                     <div class="form-group row">
                                                         <label for="avatar" class="col-sm-3 col-form-label form-label">Avatar</label>
                                                         <div class="col-sm-9">

@@ -1,27 +1,9 @@
 <?php
     class Toolbar{ ////common toolbar HTML elements loader
 
-        public static function initToolbar(){
+        public static function initToolbar($dir){
             $auth = Session::getAuth();
-
-            if(isset($auth)){
-                if($auth != NULL){
-                    self::initToolbarUser($auth);
-                }else{
-                    self::initToolbarGuest();
-                }
-            }else{
-                self::initToolbarGuest();
-            }
-        } 
-
-        public static function initToolbarGuest(){      ?>
-            <div style="width:100%; height:64px; background:red;"></div>
-
-<?php   
-        }
-
-        public static function initToolbarUser($auth){  ?>
+?>
             <!-- Header -->
             <div id="header" data-fixed class="mdk-header js-mdk-header mb-0">
                         <div class="mdk-header__content">
@@ -183,22 +165,32 @@
                                             </div>
                                         </li>
                                         <!-- // END Notifications dropdown -->
+
                                         <!-- User dropdown -->
-                                        <li class="nav-item dropdown ml-1 ml-md-3">
-                                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img src="./assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle" width="40"></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="student-account-edit.html">
-                                                    <i class="material-icons">edit</i> Edit Account
+                                        <?php if(Session::checkUserExisted()){ ?>
+                                            <li class="nav-item dropdown ml-1 ml-md-3">
+                                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"><img src="./assets/images/people/50/guy-6.jpg" alt="Avatar" class="rounded-circle" width="40"></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="<?php Nav::printURL($dir, 'profile.php'); ?>">
+                                                        <i class="material-icons">edit</i> Edit Account
+                                                    </a>
+                                                    <a class="dropdown-item" href="student-profile.html">
+                                                        <i class="material-icons">person</i> Public Profile
+                                                    </a>
+                                                    <a class="dropdown-item" href="guest-login.html">
+                                                        <i class="material-icons">lock</i> Logout
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        <?php }else{ ?>
+                                            <li class="nav-item d-none d-md-flex ml-md-3">
+                                                <a href="<?php Nav::printURL($dir, 'index.php'); ?>" class="nav-link">
+                                                    Log In
                                                 </a>
-                                                <a class="dropdown-item" href="student-profile.html">
-                                                    <i class="material-icons">person</i> Public Profile
-                                                </a>
-                                                <a class="dropdown-item" href="guest-login.html">
-                                                    <i class="material-icons">lock</i> Logout
-                                                </a>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        <?php } ?>
                                         <!-- // END User dropdown -->
+                                        
 
                                     </ul>
                                     <!-- // END Menu -->

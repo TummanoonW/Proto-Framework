@@ -1,7 +1,7 @@
 <?php
     class App{
         public static $name = "Proto-Framework Plus";
-        public static $version = "3";
+        public static $version = "3.1";
         public static $platform = ["PHP", "HTML5"]; 
 
         public static $iconURL = "./assets/images/logo/production.svg";

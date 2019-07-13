@@ -1,8 +1,10 @@
 <?php
-    include_once '../includer/includer.php'; //include Includer file to operate
+
+    $dir = "../";
+    include_once $dir . 'includer/includer.php'; //include Includer file to operate
 
     //include Proto Framework Architecture with retracked directory path
-    Includer::include_proto("../"); 
+    Includer::include_proto($dir); 
 
     $apiKey = Session::getAPIKey(); //get secret API Key
 
@@ -11,7 +13,7 @@
 
     //check if user exists
     if(Session::checkUserExisted()){
-        Nav::goto("../", "profile.php");
+        Nav::goto($dir, "profile.php");
     }else{
         //check if form were sent
         if(isset($io->post->email)){
@@ -20,7 +22,7 @@
             if($result->success){ //if the API return result
                 $auth = $result->response;
                 Session::logIn($auth); //save login data to session
-                Nav::goto("../", "profile.php"); //redirect to profile page
+                Nav::goto($dir, "profile.php"); //redirect to profile page
             }else{
                 $io->output($result);
             }
@@ -30,7 +32,16 @@
     }
 
     function login($api, $form){
-        $url = $api->getURL("index.php", 'login', $form);
+        //Real API
+        /*$url = $api->getURL("index.php", 'login', $form);
         $result = $api->get($url);
+        return $result;*/
+
+        //Mock API
+        $auth = new Auth(NULL);
+        $auth->username = "Wilhelm";
+        $auth->email = "wilhelm@gmail.com";
+        $result = new Result();
+        $result->setResult(TRUE, $auth, NULL);
         return $result;
     }

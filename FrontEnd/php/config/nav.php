@@ -26,4 +26,9 @@
             header( "location: " .  $dir . $url );
             exit();
         }
+
+        //add URL text combining between directory path and file name to HTML page
+        public static function printURL($dir, $file){
+            echo $dir . $file;
+        }
     }
