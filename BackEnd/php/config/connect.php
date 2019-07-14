@@ -1,14 +1,16 @@
 <?php
     class Connect{
-        private $host = "localhost"; //ip address or hostname
-        private $username = "root"; 
-        private $password = "";
-        private $db = "proto"; //database you want to connect
         private $conn; //MySQLi Connection
 
         //setup database connection when an Object is being construct
-        function __construct(){
-            $this->conn = mysqli_connect($this->host, $this->username, $this->password, $this->db);
+        function __construct($config){
+
+            $this->conn = mysqli_connect(
+                $config['host'], 
+                $config['username'], 
+                $config['password'], 
+                $config['db']
+            );
         }
 
         //return Result of Connection (also return $conn if succeed or $err if failed) 
@@ -83,5 +85,68 @@
         //return last generated id
         public function getLastID(){
             return mysqli_insert_id($this->getConn());
+        }
+
+        //generate query script for INSERT
+        public function scriptInsert($table, $obj){
+            $rec = clone $obj;
+            unset($rec->ID);
+            $array = (array)$rec;
+            $columns = "";
+            $values = "";
+            foreach ($array as $key => $value) {
+                if($columns == "" && $values == ""){
+                    $columns = "ID, $key";
+                    $values = "NULL, '$value'";
+                }else{
+                    $columns = $columns . ', ' . "$key";
+                    $values = $values . ', ' . "'$value'";
+                }
+            }
+            $sql = "INSERT INTO $table ($columns) VALUES ($values)";
+            return $sql;
+        }
+
+        //generate query script for UPDATE
+        public function scriptUpdate($table, $obj, $wheres){
+            $rec = clone $obj;
+            unset($rec->ID);
+            $array = (array)$rec;
+
+            $sets = "";
+            foreach ($array as $key => $value) {
+                if($sets == "") $sets = $key . "=" . "'$value'";
+                else $sets = $sets . ", " . $key . "=" . "'$value'";
+            }
+
+            $sql = "UPDATE $table SET $sets";
+
+            if(count($wheres) != 0){
+                $wh = "";
+                foreach ($wheres as $key => $value) {
+                    if($wh == "") $wh = $key . "='$value'";
+                    else $wh = $wh . " AND " . $key . "='$value'";
+                }
+                $sql = $sql . " WHERE $wh";
+            }
+
+
+            return $sql;
+        }
+
+        //generate query script for SELECT
+        public function scriptSelect($table, $wheres){
+            $sql = "SELECT * FROM $table";
+
+            if(count($wheres) != 0){
+                $wh = "";
+                foreach ($wheres as $key => $value) {
+                    if($wh == "") $wh = $key . "='$value'";
+                    else $wh = $wh . " AND " . $key . "='$value'";
+                }
+                $sql = $sql . " WHERE $wh";
+            }
+            
+            return $sql;
         }
     }

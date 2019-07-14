@@ -5,13 +5,15 @@
         //---- These are instant-functions wrapped inside a class - just to be tracable and quick-usable ---
 
         public static function getAllAuths($conn){
-            $query = "SELECT * FROM " . self::$table ;
+            $query = $conn->scriptSelect(self::$table, array());
             $result = $conn->queryArray($query);
             return $result;
         }
 
         public static function getAuthByEmail($conn, $email){
-            $query = "SELECT * FROM " . self::$table . " WHERE email='" . $email . "'";
+            $query = $conn->scriptSelect(self::$table, array(
+                'email' => $email)
+            );
             $result = $conn->querySingle($query);
             return $result;
         }
@@ -19,7 +21,10 @@
         //this function does a complex process - just to reduce workload on Front-End
         public static function login($conn, $email, $password){
             $password_hash = md5($password);
-            $query = "SELECT * FROM " . self::$table . " WHERE email='" . $email . "' AND password_hash='" . $password_hash . "'";
+            $query = $conn->scriptSelect(self::$table, array(
+                'email' => $email, 
+                'password_hash' => $password_hash)
+            );
             $result = $conn->querySingle($query);
 
             //if response = NULL that means email and password are not authorized
@@ -37,7 +42,7 @@
             //check if this email is already existed in auth table
             $result = self::getAuthByEmail($conn, $auth->email);
             if($result->response == NULL){ //if not, continue the process
-                $query = $auth->getInsertIntoQuery(self::$table); //generate query script for insertion
+                $query = $conn->scriptInsert(self::$table, $auth); //generate query script for insertion
                 $result = $conn->queryResult($query);
                 //if succeed, return Result +inserted auth
                 if($result->success){ 

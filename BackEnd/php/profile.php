@@ -8,7 +8,7 @@
     Includer::include_auth(); //call a specified-function that would trigger include-effect
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
-    $conn = new Connect(); //open Connection
+    $conn = new Connect(App::$CONFIG); //open Connection
     $secure = new Security($conn); //open Security for authorizing apiKey
 
     //check connection (also close itself when connection fails)

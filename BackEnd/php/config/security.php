@@ -13,18 +13,16 @@
             $result = new Result();
             if(isset($_GET['apiKey'])){
                 $this->apiKey = $_GET['apiKey'];
-                $query = "SELECT * FROM " . self::$table . " WHERE apiKey='" . $this->apiKey . "'";
-                $result = $this->conn->querySingle($query);
+                $query = $this->conn->scriptSelect(self::$table, array('apiKey' => $this->apiKey));
+                $result = $this->conn->queryResult($query);
 
-                if($result->response == NULL){
+                if(!$result->success){
                     $result->setResult(FALSE, NULL, Err::$ERR_UNAUTH_APIKEY);
-
                     //show error if security fails
                     echo json_encode($result);
                 }
             }else{
                 $result->setResult(FALSE, NULL, Err::$ERR_NO_APIKEY);
-
                 //show error if security fails
                 echo json_encode($result);
             }
