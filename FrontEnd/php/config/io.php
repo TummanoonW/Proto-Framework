@@ -4,21 +4,29 @@
         public $query;
         public $post;
         public $input;
+        public $method;
 
         function __construct(){
             //use method 'GET' protocol 'q' as JSON to query anything
             if(isset($_GET['q'])){
-                $q = $_GET['q'];
-                $this->query = json_decode($q);
+                $query = $_GET['q'];
+                $this->query = json_decode($query);
             }else{
                 $this->query = NULL;
             }
 
             if(isset($_GET['id'])){
-                $q = $_GET['id'];
+                $id = $_GET['id'];
                 $this->id = $id;
             }else{
                 $this->id = NULL;
+            }
+
+            if(isset($_GET['m'])){
+                $method = $_GET['m'];
+                $this->method = $method;
+            }else{
+                $this->method = NULL;
             }
 
             $p = $_POST;

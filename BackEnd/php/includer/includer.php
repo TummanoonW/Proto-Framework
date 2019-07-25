@@ -4,28 +4,28 @@
 
     class Includer{
         //Include all files within 'config' directory
-        public static function include_config(){
-            foreach (glob("./config/*.php") as $filename){
+        public static function include_config($dir){
+            foreach (glob($dir . "config/*.php") as $filename){
                 include_once $filename;
             }
         }
 
         //Include all files within 'structure' directory
         //Structure is obsolete and was never used
-        public static function include_structure(){
-            foreach (glob("./structure/*.php") as $filename){
+        public static function include_structure($dir){
+            foreach (glob($dir . "structure/*.php") as $filename){
                 include_once $filename;
             }
         }
 
-        public static function include_proto(){
-            self::include_config();
-            self::include_structure();
+        public static function include_proto($dir){
+            self::include_config($dir);
+            self::include_structure($dir);
         }
 
-        //An instant-includer specified for class FunAuth
-        public static function include_auth(){
-            include_once './function/fun_auth.php';
+        //An include a class of functions by given filename
+        public static function include_fun($dir, $file){
+            include_once $dir . 'function/' . $file;
         }
 
 

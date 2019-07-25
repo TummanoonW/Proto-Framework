@@ -2,8 +2,9 @@
 
     class Auth extends Doc{
 
+        public static $TYPE_USER = "user";
+
         public $email;
-        public $password;
         public $password_hash;
         public $username;
         public $profile_pic;
@@ -20,7 +21,6 @@
         //if certain variables is not set at the first place, it will be initialize as NULL or some default value
         public function parseJSON($obj){
             if(isset($obj->email))$this->email = $obj->email;
-            if(isset($obj->password))$this->password = $obj->password;
             if(isset($obj->password_hash)){
                 $this->password_hash = $obj->password_hash;
             }else{
@@ -36,7 +36,7 @@
             if(isset($obj->type)){
                 $this->type = $obj->type;
             }else{
-                $this->type = "user";
+                $this->type = self::$TYPE_USER;
             }
         }
 

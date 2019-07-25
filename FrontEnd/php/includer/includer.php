@@ -45,4 +45,12 @@
             include_once $dir . 'component/view/' . $file;
         }
 
+        public static function include_fun($dir, $file){
+            if(!isset($dir)){
+                $dir = "./";
+            }
+
+            include_once $dir . 'function/' . $file;
+        }
+
     }

@@ -1,10 +1,24 @@
 <?php
     class App{
         public static $name = "Proto-Framework Plus";
-        public static $version = "3.1";
-        public static $platform = ["PHP", "HTML5"]; 
+        public static $framework = "Proto-Framework Plus";
+        public static $version = "4";
+        public static $platform = ["PHP", "HTML5", "Front-End"]; 
 
-        public static $iconURL = "./assets/images/logo/production.svg";
-        public static $iconURL2 = "./assets/images/logo/production_white.svg";
+        public static $rootURL = "http://localhost:8080/proto/";
+
+        public static $pageAbout = "about.php";
+        public static $pageLogin = "login.php";
+        public static $pageRegister = "register.php";
+        public static $pageProfile = "profile.php";
+        public static $pageFeedback = "feedback.php";
+        public static $pageRegisterSuccess = "register-success.php";
+
+        public static $routeAuth = "route/auth.php";
+        public static $routeLogOut = "route/logout.php";
+
+        public static $apiURL = "https://www.trialation.com/proto-api/"; //base URL to call API
+        public static $apiAuth = "index.php";
+
     }
 ?>

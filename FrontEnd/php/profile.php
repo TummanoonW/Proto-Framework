@@ -1,9 +1,9 @@
 <?php
     //Proto Framework for PHP-HTML5
-    //v3
+    //v4
     //Developed by Tummanoon Wacha-em
 
-    $dir = './';
+    $dir = "./"; //current directory
     include_once $dir . 'includer/includer.php'; //include Includer file to operate
     Includer::include_proto($dir); //include Proto Framework Architecture
     Includer::include_view($dir, 'view_profile.php');
@@ -14,15 +14,13 @@
     $api = new API($apiKey); //open API connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
-    Header::initHeader($dir, $auth->username . "'s Profile"); //initialize HTML header elements with '<<someone name>> 's Profile' as Title
-
-    //check if user already logged in
     if(Session::checkUserExisted()){
-        ProfileView::initView($dir, $auth); //initialize HTML profile elements
+        Header::initHeader($dir, "$auth->username - Profile"); //initialize HTML header elements with 'Home' as Title
+        ProfileView::initView($dir, $auth); //initialize HTML login elements
+        Footer::initFooter($dir); //initialize HTML footer elements
     }else{
-        Nav::goto($dir, "index.php"); //return to home page
+        Nav::gotoHome();
     }
-    
-    Footer::initFooter($dir); //initialize HTML footer elements
-?>
-    
+
+
+

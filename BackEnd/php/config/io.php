@@ -2,6 +2,7 @@
     class IO{
         public $method;
         public $query;
+        public $get;
         public $post;
 
         function __construct(){
@@ -20,15 +21,12 @@
                 $this->query = NULL;
             }
 
+            //use method 'GET' as JSON to get anything
+            $get = json_decode($_GET);
+
             //use method 'POST/PUT' (aka 'input') as JSON to post anything
-            if(file_get_contents('php://input') != NULL){
-                $p = file_get_contents('php://input');
-                $this->post = json_decode($p);
-            }else{
-                $this->post = NULL;
-            }
-
-
+            $p = file_get_contents('php://input');
+            $this->post = json_decode($p);
         }
 
         //echo a given Object or Array in JSON format as string

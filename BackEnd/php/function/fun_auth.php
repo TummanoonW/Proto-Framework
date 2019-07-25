@@ -5,14 +5,29 @@
         //---- These are instant-functions wrapped inside a class - just to be tracable and quick-usable ---
 
         public static function getAllAuths($conn){
-            $query = $conn->scriptSelect(self::$table, array());
+            $query = $conn->scriptSelect(
+                self::$table, 
+                "*",
+                array(),
+                NULL,
+                NULL,
+                NULL,
+                FALSE
+            );
             $result = $conn->queryArray($query);
             return $result;
         }
 
         public static function getAuthByEmail($conn, $email){
-            $query = $conn->scriptSelect(self::$table, array(
-                'email' => $email)
+            $query = $conn->scriptSelect(
+                self::$table, 
+                "*",
+                array(
+                'email' => $email),
+                NULL,
+                NULL,
+                NULL,
+                FALSE
             );
             $result = $conn->querySingle($query);
             return $result;
@@ -21,10 +36,18 @@
         //this function does a complex process - just to reduce workload on Front-End
         public static function login($conn, $email, $password){
             $password_hash = md5($password);
-            $query = $conn->scriptSelect(self::$table, array(
+            $query = $conn->scriptSelect(
+                self::$table, 
+                "*",
+                array(
                 'email' => $email, 
-                'password_hash' => $password_hash)
+                'password_hash' => $password_hash),
+                NULL,
+                NULL,
+                NULL,
+                FALSE
             );
+
             $result = $conn->querySingle($query);
 
             //if response = NULL that means email and password are not authorized

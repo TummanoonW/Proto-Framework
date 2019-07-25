@@ -135,8 +135,8 @@
         }
 
         //generate query script for SELECT
-        public function scriptSelect($table, $wheres){
-            $sql = "SELECT * FROM $table";
+        public function scriptSelect($table, $select, $wheres, $limit, $offset, $orderBy, $desc){
+            $sql = "SELECT $select FROM $table";
 
             if(count($wheres) != 0){
                 $wh = "";
@@ -146,7 +146,39 @@
                 }
                 $sql = $sql . " WHERE $wh";
             }
-            
+
+            if($limit != NULL){
+                $sql = $sql . " LIMIT $limit";
+            }
+
+            if($offset != NULL){
+                $sql = $sql . " OFFSET $offset";
+            }
+
+            if($orderBy != NULL){
+                $sql = $sql . " ORDER BY $orderBy";
+                
+                if($desc == TRUE){
+                    $sql = $sql . " DESC";
+                }
+            }
+
+            return $sql;
+        }
+
+        //generate query script for DELETE
+        public function scriptDelete($table, $wheres){
+            $sql = "DELETE FROM $table";
+
+            if(count($wheres) != 0){
+                $wh = "";
+                foreach ($wheres as $key => $value) {
+                    if($wh == "") $wh = $key . "='$value'";
+                    else $wh = $wh . " AND " . $key . "='$value'";
+                }
+                $sql = $sql . " WHERE $wh";
+            }
+
             return $sql;
         }
     }
