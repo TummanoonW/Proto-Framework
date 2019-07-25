@@ -30,7 +30,7 @@
                         break;
                 }
 
-                $io->output($result); //output as JSON
+                $io->output($result);
             }
         }
 

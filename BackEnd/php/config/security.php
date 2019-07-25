@@ -13,7 +13,15 @@
             $result = new Result();
             if(isset($_GET['apiKey'])){
                 $this->apiKey = $_GET['apiKey'];
-                $query = $this->conn->scriptSelect(self::$table, array('apiKey' => $this->apiKey));
+                $query = $this->conn->scriptSelect(
+                    self::$table, 
+                    "*",
+                    array('apiKey' => $this->apiKey),
+                    NULL,
+                    NULL,
+                    NULL,
+                    FALSE
+                );
                 $result = $this->conn->queryResult($query);
 
                 if(!$result->success){

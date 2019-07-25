@@ -6,7 +6,7 @@
 
 ?>
           <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a class="navbar-brand" href="<?php Nav::printURL('', App::$rootURL); ?>">
+            <a class="navbar-brand" href="<?php Nav::printHome(); ?>">
               <img src="<?php Asset::embedIcon($dir, 'primary.svg'); ?>" width="30" height="30" class="d-inline-block align-top" alt="">
             </a>
 
@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php self::printActive($active, 'Home'); ?>">
-                  <a class="nav-link" href="<?php Nav::printURL('', App::$rootURL); ?>">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="<?php Nav::printHome(); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://www.trialation.com/products/proto-framework/get-start">Get Start</a>
+                <li class="nav-item <?php self::printActive($active, 'Get Start'); ?>">
+                  <a class="nav-link" href="<?php Nav::printURL($dir, App::$pageGetStart); ?>">Get Start</a>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Documentation'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

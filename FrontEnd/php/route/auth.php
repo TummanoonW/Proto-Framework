@@ -30,17 +30,8 @@
             $result = FunAuth::register($api, $form); //connect to API requesting login method
             if($result->success){ //if the API return result
                 $auth = $result->response;
-                Nav::goto($dir, App::$pageRegisterSuccess . '?q={"username": "' . $auth . '"}'); //redirect to profile page
-            }else{
-                ErrorPage::initPage($dir, $result);
-            }
-            break;
-
-        case 'edit':
-            $form = new Auth($io->post);
-            $result = FunAuth::edit($api, $form); //connect to API requesting login method
-            if($result->success){ //if the API return result
-                Nav::goBack(); //redirect to profile page
+                echo json_encode($auth);
+                Nav::goto($dir, App::$pageRegisterSuccess . '?q={"username": "' . $auth->username . '"}'); //redirect to profile page
             }else{
                 ErrorPage::initPage($dir, $result);
             }

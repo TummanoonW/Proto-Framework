@@ -10,8 +10,8 @@
                   <p class="lead"><?php echo $result->err->msg ?>!</p>
                   <hr class="my-4">
                   <p>If you find any problem you can just go back or send a feedback.</p>
-                  <a class="btn btn-primary btn-lg" href="<?php Nav::printURL('', Nav::previousURL()); ?>" role="button">Go Back</a>
-                  <a class="btn btn-outline-success btn-lg" href="<?php echo Nav::printURL($dir, App::$pageFeedback); ?>" role="button">Send a Feedback</a>
+                  <a class="btn btn-primary btn-lg" href="<?php Nav::printPrevious(); ?>" role="button">Go Back</a>
+                  <a class="btn btn-outline-success btn-lg" href="<?php Nav::printURL($dir, App::$pageFeedback); ?>" role="button">Send a Feedback</a>
                 </div>
 
 

@@ -27,9 +27,14 @@
                     $result = FunAuth::getAuthByEmail($conn, $email);
                     break;
 
+                case 'id':
+                    $id = $io->query->id;
+                    $result = FunAuth::getAuthByID($conn, $id);
+                    break;
+
                 case 'login':
-                    $email = $io->query->email;
-                    $password = $io->query->password;
+                    $email = $io->post->email;
+                    $password = $io->post->password;
                     $result = FunAuth::login($conn, $email, $password);
                     break;
 

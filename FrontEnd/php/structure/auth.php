@@ -50,13 +50,7 @@
             return ($this->email != NULL && $this->password_hash != NULL && $this->username != NULL);
         }
 
-        //generate query script for insertion
-        public function getInsertIntoQuery($table){
-            return "INSERT INTO " . $table . " (ID, email, password_hash, username, profile_pic, apiKey, type) VALUES (NULL, '" . $this->email . "', '" . $this->password_hash . "', '" . $this->username . "', '" . $this->profile_pic . "', '" . $this->apiKey . "', '" . $this->type . "')";
-        }
-
-        //generate query script for update
-        public function getUpdateQuery($table){
-            return "UPDATE " . $table . " SET username='" . $this->username . "', profile_pic='" . $this->profile_pic . "' WHERE ID=" . $this->ID;
+        public function setPasswordHash($password){
+            $this->password_hash = md5($password);
         }
     }

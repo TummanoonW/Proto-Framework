@@ -18,6 +18,21 @@
             return $result;
         }
 
+        public static function getAuthByID($conn, $id){
+            $query = $conn->scriptSelect(
+                self::$table, 
+                "*",
+                array(
+                'ID' => $id),
+                NULL,
+                NULL,
+                NULL,
+                FALSE
+            );
+            $result = $conn->querySingle($query);
+            return $result;
+        }
+
         public static function getAuthByEmail($conn, $email){
             $query = $conn->scriptSelect(
                 self::$table, 
@@ -81,10 +96,22 @@
         }
 
         public static function editProfile($conn, $form){
-            $auth = new Auth($form); //objectified/encapsulate formData to Auth
+            $result = self::getAuthByID($conn, $form->ID);
 
-            $query = $auth->getUpdateQuery(self::$table);
-            $result = $conn->queryResult($query);
+            if($result->response != NULL){
+                $ID = $form->ID;
+                unset($form->ID);
+                $form->password_hash = md5($form->password);
+                unset($form->password);
+                $query = $conn->scriptUpdate(
+                    self::$table, 
+                    $form, 
+                    array("ID" => $ID)
+                );
+                $result = $conn->queryResult($query);
+            }else{
+                $result->setErr(Err::$ERR_USER_NOT_EXISTS);
+            }
 
             return $result;
         }

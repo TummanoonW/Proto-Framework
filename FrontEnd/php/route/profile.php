@@ -5,6 +5,7 @@
 
     //include Proto Framework Architecture with retracked directory path
     Includer::include_proto($dir); 
+    Includer::include_fun($dir, 'fun_auth.php');
 
     $apiKey = Session::getAPIKey(); //get secret API Key
 
@@ -14,33 +15,37 @@
     //check if user exists
     if(Session::checkUserExisted()){
         //check if form were sent
-        if(isset($io->post->username)){
-            $form = new Auth($io->post);
-            $form->ID = $auth->ID;
-            $result = editProfile($api, $form);
+        switch($io->method){
+            case 'edit':
+                if(isset($io->id) && isset($io->post->username)){
+                    $form = new StdClass();
+                    $form->ID = $io->id;
 
-            if($result->success){ //if the API return result
-                $auth->username = $io->post->username;
-                Session::logIn($auth); //update username
-                Nav::goto($dir, "profile.php");
-            }else{
-                $io->output($result);
-            }
-        }else{
-            Nav::gotoHome(); //return to home page
+                    //if user changed username
+                    if($io->post->username != "") $form->username = $io->post->username;
+                    //if user changed password
+                    if($io->post->password != "") $form->password = $io->post->password;
+
+                    echo json_encode($form);
+                    $result = FunAuth::editProfile($api, $form);
+                        
+                    if($result->success){ //if the API return result
+                        $auth = Session::getAuth();
+                        $auth->username = $form->username;
+                        Session::logIn($auth); //update username
+                        Nav::goto($dir, App::$pageProfile);
+                    }else{
+                        ErrorPage::initPage($dir, $result);
+                    }
+                }else{
+                    Nav::gotoHome(); //return to home page
+                }
+                break;
+
+            default:
+                Nav::gotoHome(); //return to home page
+                break;
         }
     }else{
         Nav::gotoHome(); //return to home page
-    }
-
-    function editProfile($api, $form){
-        //Real API 
-        /*$url = $api->getURL("profile.php", 'edit', NULL);
-        $result = $api->post($url, $form);
-        return $result;*/
-
-        //Mock API
-        $result = new Result();
-        $result->setResult(TRUE, $form, NULL);
-        return $result;
     }

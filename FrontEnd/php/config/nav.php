@@ -36,4 +36,8 @@
         public static function printHome(){
             echo App::$rootURL;
         }
+
+        public static function printPrevious(){
+            echo self::previousURL();
+        }
     }

@@ -8,6 +8,8 @@
         public static $ERR_NO_APIKEY        = array("code" => 3, "msg" => "No API Key");
         public static $ERR_UNAUTH_APIKEY    = array("code" => 4, "msg" => "Un-authorized API Key");
         public static $ERR_CONN_FAILED      = array("code" => 5, "msg" => "Connection failed");
+        public static $ERR_USER_NOT_EXISTS     = array("code" => 6, "msg" => "This user does not exist");
+
 
         //allow developers to create their owner constant Err
         public static function genErr($code, $msg){
