@@ -27,8 +27,8 @@
                     Documentation
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://www.trialation.com/products/proto-framework">Website</a>
-                    <a class="dropdown-item" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
+                    <a class="dropdown-item" target="_blank" href="https://www.trialation.com/products/proto-framework">Back-End version</a>
+                    <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php Nav::printURL($dir, App::$pageAbout); ?>">About</a>
                   </div>

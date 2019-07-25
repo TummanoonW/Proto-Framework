@@ -11,10 +11,6 @@
                     </div>
 
                     <form class="padding-top" action="<?php Nav::printURL($dir, App::$routeAuth . "?m=register"); ?>" method="POST">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-                      </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -24,7 +20,10 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                       </div>
-
+                      <div class="form-group">
+                        <label for="exampleInputUsername">Username</label>
+                        <input name="username" type="text" class="form-control" id="exampleInputUsername" placeholder="Enter username">
+                      </div>
                       <div class="padding-top">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                       </div>

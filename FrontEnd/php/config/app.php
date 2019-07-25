@@ -13,7 +13,6 @@
         public static $pageProfile = "profile.php";
         public static $pageFeedback = "feedback.php";
         public static $pageRegisterSuccess = "register-success.php";
-
         public static $pageGetStart = "get-start/index.php";
 
 

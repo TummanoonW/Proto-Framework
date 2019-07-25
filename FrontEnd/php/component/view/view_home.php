@@ -10,7 +10,7 @@
                   <p class="lead">Build your Front-End Website based on PHP, HTML5, and Javascript combined with third-party like Bootstrap and jQuery today.</p>
                   <a class="btn btn-outline-primary btn-lg" href="<?php Nav::printURL($dir, App::$pageGetStart); ?>" role="button">Get Start</a>
                   &nbsp;
-                  <a class="btn btn-outline-success btn-lg" href="https://www.trialation.com/products/proto-framework" role="button">See Back-End version</a>
+                  <a class="btn btn-outline-success btn-lg" target="_blank" href="https://www.trialation.com/products/proto-framework" role="button">See Back-End version</a>
                   <hr class="my-4">
                   <small>Currently v4</small>
                 </div>

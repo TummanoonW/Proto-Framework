@@ -13,6 +13,9 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <title><?php echo $title ?></title>
 
+                <!-- Favicon -->
+                <LINK rel="SHORTCUT ICON" href="<?php Asset::embedIcon($dir, 'favicon.ico') ?>">
+
                 <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
                 <meta name="robots" content="noindex">
 

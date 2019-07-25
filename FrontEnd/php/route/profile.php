@@ -26,7 +26,6 @@
                     //if user changed password
                     if($io->post->password != "") $form->password = $io->post->password;
 
-                    echo json_encode($form);
                     $result = FunAuth::editProfile($api, $form);
                         
                     if($result->success){ //if the API return result
