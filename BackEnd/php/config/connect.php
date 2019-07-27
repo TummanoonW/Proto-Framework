@@ -23,9 +23,6 @@
                 $this->closeConn();
                 $err = $this->getErr();
                 $result->setResult(FALSE, NULL, $err);
-
-                //show error if connection fails
-                echo json_encode($result);
             }
             return $result;
         }

@@ -4,6 +4,9 @@
             $url = $api->getURL(App::$apiAuth, 'login', NULL);
             $result = $api->post($url, $form);
 
+            echo $url;
+            echo json_encode($form);
+
             return $result;
         }
 
@@ -16,7 +19,13 @@
 
         public static function editProfile($api, $form){
             $url = $api->getURL(App::$apiProfile, 'edit', NULL);
-            echo $url;
+            $result = $api->post($url, $form);
+
+            return $result;
+        }
+
+        public static function resetPassword($api, $form){
+            $url = $api->getURL(App::$apiAuth, 'reset', NULL);
             $result = $api->post($url, $form);
 
             return $result;

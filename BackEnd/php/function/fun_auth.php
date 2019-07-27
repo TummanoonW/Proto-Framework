@@ -95,6 +95,25 @@
             return $result;
         }
 
+        public static function reset($conn, $email, $n_password){
+            $result = self::getAuthByEmail($conn, $email);
+            if($result->response != NULL){
+                $form = new StdClass();
+                $form->password_hash = md5($n_password);
+
+                $query = $conn->scriptUpdate(
+                    self::$table, 
+                    $form, 
+                    array("email" => $email)
+                );
+                $result = $conn->queryResult($query);
+
+            }else{
+                $result->setResult(FALSE, NULL, Err::$ERR_USER_NOT_EXISTS);
+            }
+            return $result;
+        }
+
         public static function editProfile($conn, $form){
             $result = self::getAuthByID($conn, $form->ID);
 

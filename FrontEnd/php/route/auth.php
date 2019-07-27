@@ -14,7 +14,7 @@
 
     switch($io->method){
         case 'login':
-            $form = new Auth($io->post);
+            $form = $io->post;
             $result = FunAuth::login($api, $form); //connect to API requesting login method
             if($result->success){ //if the API return result
                 $auth = $result->response;
@@ -26,19 +26,29 @@
             break;
 
         case 'register':
-            $form = new Auth($io->post);
+            $form = $io->post;
             $result = FunAuth::register($api, $form); //connect to API requesting login method
             if($result->success){ //if the API return result
                 $auth = $result->response;
-                echo json_encode($auth);
                 Nav::goto($dir, App::$pageRegisterSuccess . '?q={"username": "' . $auth->username . '"}'); //redirect to profile page
             }else{
                 ErrorPage::initPage($dir, $result);
             }
             break;
 
+        case 'reset':
+            $form = $io->post;
+            $result = FunAuth::resetPassword($api, $form);
+            if($result->success){
+                $email = $form->email;
+                Nav::goto($dir, App::$pageResetSuccess . '?q={"email": "' . $email . '"}');
+            }else{
+                ErrorPage::initPage($dir, $result);
+            }
+            break;
+
         default:
-            //Nav::gotoHome(); //return to home page
+            Nav::gotoHome(); //return to home page
             break;
     }
     

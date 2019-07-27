@@ -6,7 +6,7 @@
             <body>
                 <?php Toolbar::initToolbar($dir, ''); ?>
                 <div class="jumbotron bg-light padding-top">
-                  <h1 class="display-4">Error <?php echo $result->err->code ?></h1>
+                  <h1 class="display-4"><i class="far fa-frown"></i>&nbsp; Error <?php echo $result->err->code ?></h1>
                   <p class="lead"><?php echo $result->err->msg ?>!</p>
                   <hr class="my-4">
                   <p>If you find any problem you can just go back or send a feedback.</p>

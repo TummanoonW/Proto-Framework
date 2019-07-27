@@ -26,8 +26,13 @@
                         <a href="<?php Nav::printURL($dir, App::$pageRegister); ?>" class="btn btn-outline-primary btn-block">Register</a>
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                       </div>
+
+                      <div class="padding-top">
+                         <a href="<?php Nav::printURL($dir, App::$pageResetPassword); ?>" class="btn btn-light btn-block">Forgot password?</a>
+                      </div>
                     </form>
                 </div>
+                <?php Script::initScript($dir); ?>
 <?php
         }
 

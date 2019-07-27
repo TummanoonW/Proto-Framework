@@ -12,7 +12,9 @@
     $conn = new Connect(App::$CONFIG); //open Connection
 
     //check connection (also close itself when connection fails)
-    if($conn->checkConn()->success){
+    $result = $conn->checkConn();
+    if($result->success){
+
         //check specified methods from Input/Output
         if($io->method != NULL){
             $m = $io->method;
@@ -42,13 +44,19 @@
                     $result = FunAuth::register($conn, $io->post);
                     break;
 
+                case 'reset':
+                    $email = $io->post->email;
+                    $n_password = $io->post->password;
+                    $result = FunAuth::reset($conn, $email, $n_password);
+                    break;
+
                 default:
                     $result = new Result();
                     break;
             }
 
-            $io->output($result); //output as JSON
         }
-
-        $conn->closeConn(); //close connection
     }
+
+$conn->closeConn(); //close connection
+$io->output($result); //output as JSON

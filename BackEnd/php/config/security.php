@@ -27,12 +27,10 @@
                 if(!$result->success){
                     $result->setResult(FALSE, NULL, Err::$ERR_UNAUTH_APIKEY);
                     //show error if security fails
-                    echo json_encode($result);
                 }
             }else{
                 $result->setResult(FALSE, NULL, Err::$ERR_NO_APIKEY);
                 //show error if security fails
-                echo json_encode($result);
             }
             return $result;
         }

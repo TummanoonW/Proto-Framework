@@ -13,9 +13,13 @@
     $secure = new Security($conn); //open Security for authorizing apiKey
 
     //check connection (also close itself when connection fails)
-    if($conn->checkConn()->success){
+    $result = $conn->checkConn();
+    if($result->success){
+
         //check the given apiKey if it is authorized
-        if($secure->checkSecurity()->success){
+        $result = $secure->checkSecurity();
+        if($result->success){
+            
             //check specified methods from Input/Output
             if($io->method != NULL){
                 $m = $io->method;
@@ -29,10 +33,10 @@
                         $result = new Result();
                         break;
                 }
-
-                $io->output($result);
             }
         }
-
-        $conn->closeConn(); //close connection
     }
+
+
+    $conn->closeConn(); //close connection
+    $io->output($result);
