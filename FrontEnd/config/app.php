@@ -2,7 +2,7 @@
     class App{
         public static $name = "Proto-Framework Plus";
         public static $framework = "Proto-Framework Plus";
-        public static $version = "4";
+        public static $version = "4.1";
         public static $lastUpdate = "2019/07/27 23:00:00";
         public static $platform = ["PHP", "HTML5", "Front-End"]; 
 
