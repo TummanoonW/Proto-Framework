@@ -14,7 +14,7 @@
     $api = new API($apiKey); //open API connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
-    Header::initHeader($dir, "Reset Password"); //initialize HTML header elements with 'Home' as Title
+    Header::initHeader($dir, "Reset Password", FALSE, ''); //initialize HTML header elements with 'Home' as Title
     ResetPasswordView::initView($dir); //initialize HTML login elements
     Footer::initFooter($dir, FALSE); //initialize HTML footer elements
 

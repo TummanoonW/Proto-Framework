@@ -4,9 +4,6 @@
             $url = $api->getURL(App::$apiAuth, 'login', NULL);
             $result = $api->post($url, $form);
 
-            echo $url;
-            echo json_encode($form);
-
             return $result;
         }
 

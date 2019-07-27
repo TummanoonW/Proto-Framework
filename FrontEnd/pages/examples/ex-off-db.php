@@ -20,7 +20,7 @@
         new Path(TRUE,  "Offline DB - JS", "")
     );
 
-    Header::initHeader($dir, "Offline DB - JS"); 
+    Header::initHeader($dir, "Offline DB - JS", TRUE, 'Examples'); 
     ExOffDBView::initView($dir, $paths); 
     Footer::initFooter($dir, TRUE); 
 

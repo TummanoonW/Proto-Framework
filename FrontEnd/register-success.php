@@ -16,7 +16,7 @@
 
     if(isset($io->query->username)){
         $username = $io->query->username;
-        Header::initHeader($dir, "Welcome - " . $username); //initialize HTML header elements with 'Home' as Title
+        Header::initHeader($dir, "Welcome - " . $username, FALSE, ''); //initialize HTML header elements with 'Home' as Title
         RegisterSuccessView::initView($dir, $username); //initialize HTML login elements
         Footer::initFooter($dir, FALSE); //initialize HTML footer elements
     }else{

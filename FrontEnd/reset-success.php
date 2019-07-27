@@ -16,7 +16,7 @@
 
     if(isset($io->query->email)){
         $email = $io->query->email;
-        Header::initHeader($dir, "Reset succeed - " . $email); //initialize HTML header elements with 'Home' as Title
+        Header::initHeader($dir, "Reset succeed - " . $email, FALSE, ''); //initialize HTML header elements with 'Home' as Title
         ResetSuccessView::initView($dir, $email); //initialize HTML login elements
         Footer::initFooter($dir, FALSE); //initialize HTML footer elements
     }else{

@@ -1,7 +1,7 @@
 <?php 
     class Header{ //header elements loader
 
-        public static function initHeader($dir, $title){
+        public static function initHeader($dir, $title, $showToolbar, $label){
 ?>
 
             <!DOCTYPE html>
@@ -34,6 +34,13 @@
                 <!-- Custom Style -->
                 <?php Style::customStyle($dir, 'main.css');  ?>
             </head>
+
+            <body>
+                <?php 
+                    if($showToolbar){
+                        Toolbar::initToolbar($dir, $label); 
+                    }
+                ?>
 <?php
         }
     }

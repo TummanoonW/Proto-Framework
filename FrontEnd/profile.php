@@ -20,7 +20,7 @@
             new Path(TRUE,  "Profile",  Nav::getURL($dir, App::$pageProfile))
         );
 
-        Header::initHeader($dir, "$auth->username - Profile"); //initialize HTML header elements with 'Home' as Title
+        Header::initHeader($dir, "$auth->username - Profile", TRUE, 'Profile'); //initialize HTML header elements with 'Home' as Title
         ProfileView::initView($dir, $auth, $paths); //initialize HTML login elements
         Footer::initFooter($dir, FALSE); //initialize HTML footer elements
     }else{

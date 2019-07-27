@@ -14,7 +14,7 @@
     $api = new API($apiKey); //open API connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
-    Header::initHeader($dir, "Get Start"); //initialize HTML header elements with 'Home' as Title
+    Header::initHeader($dir, "Get Start", TRUE, "Get Start"); //initialize HTML header elements with 'Home' as Title
     GetStartView::initView($dir); //initialize HTML login elements
     Footer::initFooter($dir, TRUE); //initialize HTML footer elements
 

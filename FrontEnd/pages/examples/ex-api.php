@@ -20,7 +20,7 @@
         new Path(TRUE,  "API - Back-End", "")
     );
 
-    Header::initHeader($dir, "API - Back-End"); 
+    Header::initHeader($dir, "API - Back-End", TRUE, 'Examples'); 
     ExAPIView::initView($dir, $paths); 
     Footer::initFooter($dir, TRUE); 
 
