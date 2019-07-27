@@ -27,8 +27,8 @@
                     Examples
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Interactive Back-End API</a>
-                    <a class="dropdown-item" href="#">Offline Database (JS version)</a>
+                    <a class="dropdown-item" href="<?php Nav::printURL($dir, App::$pageExAPI) ?>">Connect with API (Back-End version)</a>
+                    <a class="dropdown-item" href="<?php Nav::printURL($dir, App::$pageExOffDB) ?>">Offline Database (JS version)</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Documentation'); ?>">

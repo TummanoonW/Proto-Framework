@@ -3,7 +3,7 @@
     //v4
     //Developed by Tummanoon Wacha-em
 
-    $dir = "../"; //current directory
+    $dir = "../../"; //current directory
     include_once $dir . 'includer/includer.php'; //include Includer file to operate
     Includer::include_proto($dir); //include Proto Framework Architecture
     Includer::include_view($dir, 'get-start/view_get-start.php');
