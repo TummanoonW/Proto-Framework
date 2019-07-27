@@ -4,18 +4,13 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory
-    include_once $dir . 'includer/includer.php'; //include Includer file to operate
-    Includer::include_proto($dir); //include Proto Framework Architecture
+    include_once $dir . 'includer/includer.php'; 
+    Includer::include_proto($dir); 
     Includer::include_view($dir, 'view_about.php');
 
-    $auth = Session::getAuth(); //get Logged In user
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
-    $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
-
-    Header::initHeader($dir, "About", TRUE, "Documentation"); //initialize HTML header elements with 'Home' as Title
-    AboutView::initView($dir); //initialize HTML login elements
-    Footer::initFooter($dir, TRUE); //initialize HTML footer elements
+    
+    Header::initHeader($dir, "About", TRUE, "Documentation"); 
+    AboutView::initView($dir); 
+    Footer::initFooter($dir, TRUE); 
 
 

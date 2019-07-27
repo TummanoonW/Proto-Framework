@@ -8,17 +8,13 @@
     Includer::include_proto($dir); //include Proto Framework Architecture
     Includer::include_view($dir, 'view_register-success.php');
 
-    $auth = Session::getAuth(); //get Logged In user
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
     if(isset($io->query->username)){
         $username = $io->query->username;
-        Header::initHeader($dir, "Welcome - " . $username, FALSE, ''); //initialize HTML header elements with 'Home' as Title
-        RegisterSuccessView::initView($dir, $username); //initialize HTML login elements
-        Footer::initFooter($dir, FALSE); //initialize HTML footer elements
+        Header::initHeader($dir, "Welcome - " . $username, FALSE, '');
+        RegisterSuccessView::initView($dir, $username);
+        Footer::initFooter($dir, FALSE);
     }else{
         Nav::gotoHome($dir);
     }

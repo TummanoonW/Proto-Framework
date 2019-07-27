@@ -8,11 +8,6 @@
     Includer::include_proto($dir); 
     Includer::include_view($dir, 'examples/view_api.php');
 
-    $auth = Session::getAuth(); 
-    $apiKey = Session::getAPIKey(); 
-
-    $api = new API($apiKey); 
-    $io = new IO(); 
 
     $paths = array(
         new Path(FALSE, "Home", Nav::getHome($dir)),

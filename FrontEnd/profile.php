@@ -9,10 +9,6 @@
     Includer::include_view($dir, 'view_profile.php');
 
     $auth = Session::getAuth(); //get Logged In user
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
-    $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
     if(Session::checkUserExisted()){
         $paths = array(
@@ -20,11 +16,11 @@
             new Path(TRUE,  "Profile",  Nav::getURL($dir, App::$pageProfile))
         );
 
-        Header::initHeader($dir, "$auth->username - Profile", TRUE, 'Profile'); //initialize HTML header elements with 'Home' as Title
-        ProfileView::initView($dir, $auth, $paths); //initialize HTML login elements
+        Header::initHeader($dir, "$auth->username - Profile", TRUE, 'Profile'); //initialize HTML header elements with 'Profile' as Title
+        ProfileView::initView($dir, $auth, $paths); //initialize HTML profile elements
         Footer::initFooter($dir, FALSE); //initialize HTML footer elements
     }else{
-        Nav::gotoHome($dir);
+        Nav::gotoHome($dir); //if user did not log in, automatically return to home page
     }
 
 

@@ -8,14 +8,9 @@
     Includer::include_proto($dir); //include Proto Framework Architecture
     Includer::include_view($dir, 'view_home.php');
 
-    $auth = Session::getAuth(); //get Logged In user
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
-    $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
-
+    
     Header::initHeader($dir, App::$name, TRUE, 'Home'); //initialize HTML header elements with 'Home' as Title
-    HomeView::initView($dir); //initialize HTML login elements
+    HomeView::initView($dir); //initialize HTML home elements
     Footer::initFooter($dir, TRUE); //initialize HTML footer elements
 
 
