@@ -4,7 +4,7 @@
 ?>
             <div class="container padding-top">
                 <?php Breadcrumb::initBreadcrumb($dir, $paths) ?>
-                <h2>To-Do App</h2>
+                <h2><i class="fas fa-database mr-3"></i>To-Do App</h2>
                 <h5 class="mt-4">Proto DB example (Offline Database with JS)</h5>
                 <label class="text-black-50">Note: All the data you've inserted are stored on your web browser's cache data. It will not store online.</label>
 

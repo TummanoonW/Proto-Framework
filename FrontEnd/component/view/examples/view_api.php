@@ -4,13 +4,12 @@
 ?>
             <div class="container padding-top">
                 <?php Breadcrumb::initBreadcrumb($dir, $paths) ?>
-                <h2>Personal Finace App</h2>
+                <h2><i class="fas fa-server mr-3"></i>Money Saving App</h2>
                 <h5 class="mt-4">Proto API example (Back-End version)</h5>
-                <label class="text-black-50">Note: All the data you've inserted are stored on your web browser's cache data. It will not store online.</label>
 
                 <form action="<?php Nav::echoURL($dir, App::$routeExample . '?m=add') ?>" method="POST" class="input-group mb-3 mt-4">
                   <input name="text" type="text" class="form-control" placeholder="description" aria-label="description" aria-describedby="button-addon2">
-                  <input name="value" type="number" class="form-control" placeholder="income / loss (&#3647;)" aria-label="income / loss (&#3647;)" aria-describedby="button-addon2">
+                  <input name="value" type="number" class="form-control" placeholder="saving / spending (&#3647;)" aria-label="saving / spending (&#3647;)" aria-describedby="button-addon2">
                   <div class="input-group-append">
                     <button type="submit" class="btn btn-outline-primary" type="button" id="button-addon2">
                         <i class="fas fa-plus"></i>&nbsp; Add
