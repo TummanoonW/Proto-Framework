@@ -26,6 +26,7 @@
         public static $routeAuth = "route/auth.php";
         public static $routeProfile = "route/profile.php";
         public static $routeLogOut = "route/logout.php";
+        public static $routeExample = "route/example.php";
         /* --- Web Route file names --- */
 
 
@@ -33,6 +34,7 @@
         public static $apiURL = "https://www.trialation.com/proto-api/"; //base URL to call API
         public static $apiAuth = "index.php";
         public static $apiProfile = "profile.php";
+        public static $apiExample = "example.php";
         /* --- API file names --- */
 
     }

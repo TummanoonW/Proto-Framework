@@ -1,4 +1,4 @@
-//Proto Framework for Javascript-SessionStorage
+//Proto DB with Javascript using SessionStorage
 //v2.1
 //Developed by Tummanoon Wacha-em
 

@@ -12,10 +12,10 @@
     $paths = array(
         new Path(FALSE, "Home", Nav::getHome($dir)),
         new Path(FALSE, "Examples", ""),
-        new Path(TRUE,  "Offline DB - JS", "")
+        new Path(TRUE,  "Proto DB", "")
     );
 
-    Header::initHeader($dir, "Offline DB - JS", TRUE, 'Examples'); 
+    Header::initHeader($dir, "Proto DB", TRUE, 'Examples'); 
     ExOffDBView::initView($dir, $paths); 
     Footer::initFooter($dir, TRUE); 
 
