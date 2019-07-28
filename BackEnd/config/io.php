@@ -29,9 +29,9 @@
             $this->post = json_decode($p);
         }
 
-        //echo a given Object or Array in JSON format as string
+        //display a given Object or Array in JSON format as string
         public function output($obj){
-            echo json_encode($obj);
+            print json_encode($obj);
         }
 
     }

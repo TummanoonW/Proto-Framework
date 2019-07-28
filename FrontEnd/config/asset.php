@@ -12,7 +12,7 @@
         public static $thumb_def = "assets/images/thumbs/def.png";
         public static $image_def = "assets/images/def.png";
 
-        public static function printIcon($dir, $url){
+        public static function echoIcon($dir, $url){
             if(file_exists($url)){
                 echo $url;
             }else{
@@ -20,7 +20,7 @@
             }
         }
 
-        public static function printThumb($dir, $url){
+        public static function echoThumb($dir, $url){
             if(file_exists($url)){
                 echo $url;
             }else{
@@ -28,7 +28,7 @@
             }
         }
         
-        public static function printImage($dir, $url){
+        public static function echoImage($dir, $url){
             if(file_exists($url)){
                 echo $url;
             }else{

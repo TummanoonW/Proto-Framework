@@ -20,16 +20,16 @@
                 <meta name="robots" content="noindex">
 
                 <!-- Font Awesome Icons -->
-                <link rel="stylesheet" href="<?php Nav::printURL($dir, 'assets/theme/font-awesome/all.css'); ?>">
+                <link rel="stylesheet" href="<?php Nav::echoURL($dir, 'assets/theme/font-awesome/all.css'); ?>">
 
                 <!-- Bootstrap -->
-                <link rel="stylesheet" href="<?php Nav::printURL($dir, 'assets/theme/bootstrap/css/bootstrap.min.css'); ?>">
+                <link rel="stylesheet" href="<?php Nav::echoURL($dir, 'assets/theme/bootstrap/css/bootstrap.min.css'); ?>">
 
                 <!-- jQuery -->
-                <script src="<?php Nav::printURL($dir, 'assets/jquery/jquery.min.js'); ?>"></script>
+                <script src="<?php Nav::echoURL($dir, 'assets/jquery/jquery.min.js'); ?>"></script>
 
                 <!-- Proto-Framework Offline Database -->
-                <script src="<?php Nav::printURL($dir, 'assets/js/config/connect.js') ?>"></script>
+                <script src="<?php Nav::echoURL($dir, 'assets/js/config/connect.js') ?>"></script>
 
                 <!-- Custom Style -->
                 <?php Style::customStyle($dir, 'main.css');  ?>

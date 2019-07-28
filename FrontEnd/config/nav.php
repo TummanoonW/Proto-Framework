@@ -13,7 +13,7 @@
             header( "location: " . $dir);
             exit();
         }
-        public static function printHome($dir){
+        public static function echoHome($dir){
             echo $dir;
         }
         public static function getHome($dir){
@@ -27,7 +27,7 @@
 	        header("Location: {$_SERVER['HTTP_REFERER']}");
 	        exit();
         }
-        public static function printPrevious(){
+        public static function echoPrevious(){
             echo $_SERVER['HTTP_REFERER'];
         }
         public static function getPrevious(){
@@ -41,7 +41,7 @@
             header( "location: " .  $dir . $url );
             exit();
         }
-        public static function printURL($dir, $file){
+        public static function echoURL($dir, $file){
             echo $dir . $file;
         }
         public static function getURL($dir, $file){
