@@ -31,12 +31,12 @@
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>">Proto DB (Offline Database with JS)</a>
                   </div>
                 </li>
-                <li class="nav-item dropdown <?php self::printActive($active, 'Documentation'); ?>">
+                <li class="nav-item dropdown <?php self::printActive($active, 'Docs'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Documentation
+                    Docs
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" target="_blank" href="https://www.trialation.com/products/proto-framework">Back-End version</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Back-End version</a>
                     <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageAbout); ?>">About</a>

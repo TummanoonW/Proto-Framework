@@ -11,7 +11,7 @@
                             <a class="nav-link" href="https://github.com/TummanoonW/Proto-Framework" target="_blank">Github</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="https://www.trialation.com/products/proto-framework" target="_blank">Back-End version</a>
+                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Back-End version</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageGetStart); ?>">Get Start</a>
