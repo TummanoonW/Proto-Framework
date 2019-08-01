@@ -61,7 +61,10 @@
             $result = $this->queryResult($query);
             if($result->success){
                 $row = mysqli_fetch_array($result->response, MYSQLI_ASSOC);
-                $result->setResponse($row);
+                if($row == NULL)$obj = NULL;
+                else $obj = (object)$row;
+
+                $result->setResponse($obj);
             }
             return $result;
         }
@@ -72,7 +75,10 @@
             if($result->success){
                 $arr = array();
                 while( $row = mysqli_fetch_array($result->response, MYSQLI_ASSOC) ){
-                    array_push($arr, $row);
+                    if($row == NULL)$obj = NULL;
+                    else $obj = (object)$row;
+
+                    array_push($arr, $obj);
                 }
                 $result->setResponse($arr);
             }
@@ -118,6 +124,10 @@
 
             $sql = "UPDATE $table SET $sets";
 
+            if(!is_array($wheres)){
+                $wheres = (array)$wheres;
+            }
+
             if(count($wheres) != 0){
                 $wh = "";
                 foreach ($wheres as $key => $value) {
@@ -134,6 +144,10 @@
         //generate query script for SELECT
         public function scriptSelect($table, $select, $wheres, $limit, $offset, $orderBy, $desc){
             $sql = "SELECT $select FROM $table";
+
+            if(!is_array($wheres)){
+                $wheres = (array)$wheres;
+            }
 
             if(count($wheres) != 0){
                 $wh = "";
@@ -166,6 +180,10 @@
         //generate query script for DELETE
         public function scriptDelete($table, $wheres){
             $sql = "DELETE FROM $table";
+
+            if(!is_array($wheres)){
+                $wheres = (array)$wheres;
+            }
 
             if(count($wheres) != 0){
                 $wh = "";
