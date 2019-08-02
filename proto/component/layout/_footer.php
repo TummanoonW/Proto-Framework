@@ -14,7 +14,7 @@
                             <a class="nav-link" href="https://www.trialation.com/products/proto-framework" target="_blank">Back-End version</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageGetStart); ?>">Get Start</a>
+                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Get Start</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageAbout) ?>">About</a>

@@ -6,11 +6,11 @@
     $dir = "../../"; //current directory
     include_once $dir . 'includer/includer.php'; 
     Includer::include_proto($dir); 
-    Includer::include_view($dir, 'get-start/view_get-start.php');
+    Includer::include_view($dir, 'docs/view_docs.php');
 
 
-    Header::initHeader($dir, "Get Start", TRUE, "Get Start");
-    GetStartView::initView($dir); 
+    Header::initHeader($dir, "Docs", TRUE, "Docs");
+    DocsView::initView($dir); 
     Footer::initFooter($dir, TRUE); 
 
 

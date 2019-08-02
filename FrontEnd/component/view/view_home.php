@@ -12,7 +12,7 @@
                 <p class="lead">
                     Build your Front-End Website based on PHP7, HTML5, CSS and Javascript with integrated Offline Database library - combined with third-party like Bootstrap and jQuery today.
                 </p>
-                <a class="btn btn-outline-primary btn-lg" href="<?php Nav::echoURL($dir, App::$pageGetStart) ?>" role="button">Get Start</a>
+                <a class="btn btn-outline-primary btn-lg" href="<?php Nav::echoURL($dir, App::$pageDocs) ?>" role="button">Get Start</a>
                 &nbsp;
                 <a class="btn btn-outline-success btn-lg" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>" role="button">See Back-End version</a>
                 <hr class="my-4">
@@ -26,7 +26,7 @@
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.
                   </p>
                   <hr class="half-rule">
-                  <a class="btn btn-outline-primary" href="<?php Nav::echoURL($dir, App::$pageGetStart) ?>">Get Start</a>
+                  <a class="btn btn-outline-primary" href="<?php Nav::echoURL($dir, App::$pageDocs) ?>">Get Start</a>
                 </div>
                 <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                   <i class="fas fa-server text-info size32 mb-2"></i>

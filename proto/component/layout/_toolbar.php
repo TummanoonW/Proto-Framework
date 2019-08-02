@@ -20,7 +20,7 @@
                   <a class="nav-link" href="<?php Nav::echoHome($dir); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php self::printActive($active, 'Get Start'); ?>">
-                  <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageGetStart); ?>">Get Start</a>
+                  <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Get Start</a>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Examples'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

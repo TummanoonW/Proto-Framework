@@ -1,5 +1,5 @@
 <?php
-    class GetStartView{
+    class DocsView{
         public static function initView($dir){
 ?>
           <div class="jumbotron bg-light padding-top">

@@ -16,7 +16,7 @@
         public static $pageRegisterSuccess = "register-success.php";
         public static $pageResetPassword = "reset-password.php";  
         public static $pageResetSuccess = "reset-success.php";
-        public static $pageGetStart = "pages/get-start/";
+        public static $pageDocs = "pages/docs/";
         public static $pageExAPI = "pages/examples/ex-api.php";
         public static $pageExOffDB = "pages/examples/ex-off-db.php";
         public static $pageProtoAPI = "pages/proto-api/";

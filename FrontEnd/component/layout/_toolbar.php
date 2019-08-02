@@ -19,8 +19,8 @@
                 <li class="nav-item <?php self::printActive($active, 'Home'); ?>">
                   <a class="nav-link" href="<?php Nav::echoHome($dir); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item <?php self::printActive($active, 'Get Start'); ?>">
-                  <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageGetStart); ?>">Get Start</a>
+                <li class="nav-item <?php self::printActive($active, 'Docs'); ?>">
+                  <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Docs</a>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Examples'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,9 +31,9 @@
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>">Proto DB (Offline Database with JS)</a>
                   </div>
                 </li>
-                <li class="nav-item dropdown <?php self::printActive($active, 'Docs'); ?>">
+                <li class="nav-item dropdown <?php self::printActive($active, 'Help'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Docs
+                    Help
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Back-End version</a>
