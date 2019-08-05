@@ -1,7 +1,7 @@
 <?php
     class ErrorPage{
         public static function initPage($dir, $result){
-            Header::initHeader($dir, "Error - " . $result->err->code, TRUE, ''); //initialize HTML header elements with '<<someone name>> 's Profile' as Title
+            Header::initHeader($dir, "Error - " . $result->err->code, TRUE, '', TRUE); //initialize HTML header elements with '<<someone name>> 's Profile' as Title
 ?>
             <div class="jumbotron bg-light padding-top">
               <h1 class="display-4"><i class="far fa-frown"></i>&nbsp; Error <?php echo $result->err->code ?></h1>

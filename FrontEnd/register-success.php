@@ -12,7 +12,7 @@
 
     if(isset($io->query->username)){
         $username = $io->query->username;
-        Header::initHeader($dir, "Welcome - " . $username, FALSE, '');
+        Header::initHeader($dir, "Welcome - " . $username, FALSE, '', FALSE);
         RegisterSuccessView::initView($dir, $username);
         Footer::initFooter($dir, FALSE);
     }else{

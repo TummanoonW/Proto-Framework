@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'view_reset-password.php');
 
 
-    Header::initHeader($dir, "Reset Password", FALSE, '');
+    Header::initHeader($dir, "Reset Password", FALSE, '', FALSE);
     ResetPasswordView::initView($dir);
     Footer::initFooter($dir, FALSE);
 

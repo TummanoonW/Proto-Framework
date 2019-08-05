@@ -1,11 +1,11 @@
 <?php
     class Toolbar{ ////common toolbar HTML elements loader
 
-        public static function initToolbar($dir, $active){
+        public static function initToolbar($dir, $active, $sticky){
           $auth = Session::getAuth();
 
 ?>
-          <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark <?php if($sticky)echo 'sticky-top'; ?>">
             <a class="navbar-brand" href="<?php Nav::echoHome($dir); ?>">
               <img src="<?php Asset::embedIcon($dir, 'primary.svg'); ?>" width="30" height="30" class="d-inline-block align-top" alt="">
             </a>

@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'view_home.php');
 
     
-    Header::initHeader($dir, App::$name, TRUE, 'Home'); //initialize HTML header elements with 'Home' as Title
+    Header::initHeader($dir, App::$name, TRUE, 'Home', TRUE); //initialize HTML header elements with 'Home' as Title
     HomeView::initView($dir); //initialize HTML home elements
     Footer::initFooter($dir, TRUE); //initialize HTML footer elements
 

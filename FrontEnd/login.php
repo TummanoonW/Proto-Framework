@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'view_login.php');
 
 
-    Header::initHeader($dir, "Login", FALSE, ''); //initialize HTML header elements with 'Login' as Title
+    Header::initHeader($dir, "Login", FALSE, '', FALSE); //initialize HTML header elements with 'Login' as Title
     LoginView::initView($dir); //initialize HTML login elements
     Footer::initFooter($dir, FALSE); //initialize HTML footer elements
 

@@ -36,7 +36,7 @@
     $result = FunExample::all($api);
     if($result->success)$items = $result->response;
 
-    Header::initHeader($dir, "Proto API", TRUE, 'Examples'); 
+    Header::initHeader($dir, "Proto API", TRUE, 'Examples', TRUE); 
     ExAPIView::initView($dir, $paths, $items); 
     Footer::initFooter($dir, TRUE); 
 

@@ -12,7 +12,7 @@
 
     if(isset($io->query->email)){
         $email = $io->query->email;
-        Header::initHeader($dir, "Reset succeed - " . $email, FALSE, ''); 
+        Header::initHeader($dir, "Reset succeed - " . $email, FALSE, '', FALSE); 
         ResetSuccessView::initView($dir, $email);
         Footer::initFooter($dir, FALSE); 
     }else{

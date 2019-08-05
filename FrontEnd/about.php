@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'view_about.php');
 
     
-    Header::initHeader($dir, "About", TRUE, "Docs"); 
+    Header::initHeader($dir, "About", TRUE, "Docs", TRUE); 
     AboutView::initView($dir); 
     Footer::initFooter($dir, TRUE); 
 

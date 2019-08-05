@@ -16,7 +16,18 @@
         public static $pageRegisterSuccess = "register-success.php";
         public static $pageResetPassword = "reset-password.php";  
         public static $pageResetSuccess = "reset-success.php";
+
         public static $pageDocs = "pages/docs/";
+        public static $pageDocsIntroduction = "pages/docs/introduction.php";
+        public static $pageDocsIncluder = "pages/docs/includer.php";
+        public static $pageDocsComponent = "pages/docs/component.php";
+        public static $pageDocsPages = "pages/docs/pages.php";
+        public static $pageDocsConfig = "pages/docs/config.php";
+        public static $pageDocsRoute = "pages/docs/route.php";
+        public static $pageDocsFunction = "pages/docs/function.php";
+        public static $pageDocsAsset = "pages/docs/asset.php";
+
+
         public static $pageExAPI = "pages/examples/ex-api.php";
         public static $pageExOffDB = "pages/examples/ex-off-db.php";
         public static $pageProtoAPI = "pages/proto-api/";

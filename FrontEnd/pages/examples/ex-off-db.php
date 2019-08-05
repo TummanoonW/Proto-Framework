@@ -15,7 +15,7 @@
         new Path(TRUE,  "Proto DB", "")
     );
 
-    Header::initHeader($dir, "Proto DB", TRUE, 'Examples'); 
+    Header::initHeader($dir, "Proto DB", TRUE, 'Examples', TRUE); 
     ExOffDBView::initView($dir, $paths); 
     Footer::initFooter($dir, TRUE); 
 

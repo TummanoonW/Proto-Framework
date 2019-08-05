@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'view_register.php');
 
 
-    Header::initHeader($dir, "Login", FALSE, ''); //initialize HTML header elements with 'Register' as Title
+    Header::initHeader($dir, "Login", FALSE, '', FALSE); //initialize HTML header elements with 'Register' as Title
     RegisterView::initView($dir); //initialize HTML lregister elements
     Footer::initFooter($dir, FALSE); //initialize HTML footer elements
 

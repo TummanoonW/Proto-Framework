@@ -9,7 +9,7 @@
     Includer::include_view($dir, 'proto-api/view_proto-api.php');
 
 
-    Header::initHeader($dir, "Proto-API Docs", TRUE, "Docs");
+    Header::initHeader($dir, "Proto-API Docs", TRUE, "Docs", TRUE);
     ProtoAPIView::initView($dir); 
     Footer::initFooter($dir, TRUE); 
 
