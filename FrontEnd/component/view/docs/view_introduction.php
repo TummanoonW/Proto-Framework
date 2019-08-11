@@ -34,20 +34,21 @@
         public static function initPageGetStart($dir){
 ?>
           <div class="container">
-            <h3 id="item-0">Introduction</h3>
-            <iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h2 id="item-0">Introduction</h2>
+            <!--<iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>-->
+            <img src="<?php Asset::embedThumb($dir, 'banner.png') ?>">
           </div>
           <div class="container mt-4">
-            <h4 id="item-1">What is it?</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.</p>
+            <h3 id="item-1">What is it?</h3>
+            <p>Proto-Framework is a Responsive web application framework based on PHP7, HTML5, CSS designed to be coded in the Object-Oriented-Programming (OOP) style. The framework also includes collaboration with the Proto API (Back-End version for doing things with the database) and Proto DB (Javascript-base Offline Database).</p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-2">Architecture</h4>
+            <h3 id="item-2">Architecture</h3>
             <img src="<?php Asset::embedImage($dir, 'img6.png') ?>" class="w-75 h-auto p2 mb-4" alt="Front-End Architecture">
             <p></p>
           </div>
           <div class="container mt-4">      
-            <h4 id="item-3" class="mt-4">Next Step!</h4>
+            <h3 id="item-3" class="mt-4">Next Step!</h3>
             <p>It is important to understand the idea and concept of Proto-Framework which will be the fundamental understand in the coming step.</p>
             <a href="<?php Nav::echoURL($dir, App::$pageDocsIncluder) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>

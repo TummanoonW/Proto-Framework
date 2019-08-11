@@ -15,24 +15,24 @@
         }
 
         //build URL with custom path
-        public function getURLCustom($path){
+        private function getURLCustom($path){
             return App::$apiURL . $path . $this->getAPIParam();
         }
 
-        public function getURLRoot(){
+        private function getURLRoot(){
             return App::$apiURL . $this->getAPIParam();
         }
 
-        public function getQueryParam($query){
+        private function getQueryParam($query){
             $json = json_encode($query);
             return '&q=' . $json;
         }
 
-        public function getMethodParam($m){
+        private function getMethodParam($m){
             return '&m=' . $m;
         }
 
-        public function getAPIParam(){
+        private function getAPIParam(){
             return '?apiKey=' . $this->apiKey;
         }
 
@@ -71,7 +71,7 @@
         }
 
         //delete data then return data from the given URL
-        public function delete($url){
+        /*public function delete($url){
             $curlSession = curl_init();
             curl_setopt($curlSession, CURLOPT_URL, $url);
             curl_setopt($curlSession, CURLOPT_CUSTOMREQUEST, "DELETE");
@@ -85,5 +85,5 @@
             curl_close($curlSession);
 
             return $response;
-        }
+        }*/
     }

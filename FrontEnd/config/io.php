@@ -2,9 +2,10 @@
     class IO{
         public $id;
         public $query;
-        public $post;
         public $input;
         public $method;
+        public $get;
+        public $post;
 
         function __construct(){
             //use method 'GET' protocol 'q' as JSON to query anything
@@ -29,9 +30,6 @@
                 $this->method = NULL;
             }
 
-            $p = $_POST;
-            $this->post = (object)$p;
-
             //use method 'POST/PUT' (aka 'input') as JSON to post anything
             if(file_get_contents('php://input') != NULL){
                 $i = file_get_contents('php://input');
@@ -40,6 +38,11 @@
                 $this->input = NULL;
             }
 
+            $g = $_GET;
+            $this->get = (object)$g;
+
+            $p = $_POST;
+            $this->post = (object)$p;
 
         }
 

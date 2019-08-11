@@ -36,31 +36,32 @@
         public static function initPageGetStart($dir){
 ?>
           <div class="container">
-            <h3 id="item-0">Asset</h3>
-            <iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h2 id="item-0">Asset</h2>
+            <!--<iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>-->
+            <img src="<?php Asset::embedThumb($dir, 'banner.png') ?>">
           </div>
           <div class="container mt-4">
-            <h4 id="item-1">CSS</h4>
+            <h3 id="item-1">CSS</h3>
             <p></p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-2">JS</h4>
+            <h3 id="item-2">JS</h3>
             <p></p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-3">Images</h4>
+            <h3 id="item-3">Images</h3>
             <p></p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-4">jQuery</h4>
+            <h3 id="item-4">jQuery</h3>
             <p></p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-5">Theme</h4>
+            <h3 id="item-5">Theme</h3>
             <p></p>
           </div>
           <div class="container mt-4">
-            <h4 id="item-2" class="mt-4">Ende!</h4>
+            <h3 id="item-2" class="mt-4">Ende!</h3>
             <p>Now you are ready to code more with Proto-Framework.</p>
             <a href="<?php Nav::echoURL($dir, App::$pageExAPI) ?>" class="btn btn-outline-info">Proto API<i class="fas fa-server ml-2"></i></a>
             <a href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>" class="btn btn-outline-success">Proto DB<i class="fas fa-database ml-2"></i></a>

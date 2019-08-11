@@ -10,11 +10,11 @@
             <div class="jumbotron bg-light padding-top">
                 <h1 class="display-4"><?php echo App::$name ?></h1>
                 <p class="lead">
-                    Build your Front-End Website based on PHP7, HTML5, CSS and Javascript with integrated Offline Database library - combined with third-party like Bootstrap and jQuery today.
+                    Build your responsive web app based on PHP7, HTML5, CSS and Javascript with integrated Offline Database library - combined with third-party like Bootstrap and jQuery today.
                 </p>
                 <a class="btn btn-outline-primary btn-lg" href="<?php Nav::echoURL($dir, App::$pageDocs) ?>" role="button">Get Start</a>
                 &nbsp;
-                <a class="btn btn-outline-success btn-lg" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>" role="button">See Back-End version</a>
+                <a class="btn btn-outline-success btn-lg" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>" role="button"><i class="fas fa-download mr-2"></i>Download the latest version</a>
                 <hr class="my-4">
                 <small>Currently v<?php echo App::$version ?></small>
             </div>

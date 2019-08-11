@@ -28,8 +28,9 @@
                       </div>
                     </footer>
                 <?php } ?>
-
-                <?php Script::initScript($dir); ?>
+                
+                <!-- Bootstrap -->
+                <script src="<?php Nav::echoURL($dir, 'assets/theme/bootstrap/js/bootstrap.min.js'); ?>"></script>
             </body>
             </html>
 <?php

@@ -17,25 +17,28 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php self::printActive($active, 'Home'); ?>">
-                  <a class="nav-link" href="<?php Nav::echoHome($dir); ?>">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="<?php Nav::echoHome($dir); ?>">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php self::printActive($active, 'Docs'); ?>">
                   <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Docs</a>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Examples'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Examples
+                    Samples
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExAPI) ?>">Proto API (Back-End version)</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>">Proto DB (Offline Database with JS)</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExAPI) ?>">Proto API Project</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>">Proto DB Project</a>
                   </div>
                 </li>
-                <li class="nav-item dropdown <?php self::printActive($active, 'Help'); ?>">
+                <li class="nav-item dropdown <?php self::printActive($active, 'More'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Help
+                    More
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExAPI); ?>">Proto API</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB); ?>">Proto DB</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Back-End version</a>
                     <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
                     <div class="dropdown-divider"></div>

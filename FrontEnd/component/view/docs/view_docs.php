@@ -38,13 +38,14 @@
         public static function initPageGetStart($dir){
 ?>
           <div class="container">
-            <h3 id="item-0">Get Start</h3>
-            <iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            <h2 id="item-0">Get Start</h2>
+            <!--<iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>-->
+            <img src="<?php Asset::embedThumb($dir, 'banner.png') ?>">
           </div>
           <div class="container mt-4">
-            <h4 id="item-1">Guides</h4>
+            <h3 id="item-1">Guides</h3>
             <div class="pt-3 pb-2">
-              <h5 id="item-1-1">Requirement</h5>
+              <h4 id="item-1-1">Requirement</h4>
               <p>Before starting a new project, make sure you have installed these required programs as follow.</p>
               <ul>
                 <li>IDE Tool - such as <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or any others.</li>
@@ -52,14 +53,14 @@
               </ul>
             </div>
             <div class="pt-3 pb-2">
-              <h5 id="item-1-2">Download & Installation</h5>
+              <h4 id="item-1-2">Download & Installation</h4>
               <p>Download one of the project from links provided below. You can choose to download <strong>Empty Project</strong> which is easy to <i>build from scratch</i> or <strong>with Examples and Docs</strong> which includes many example files and built-in docs.</p>
               <div class="container mt-4">
-                <h6 class="mt-2 mb-2">Manually Downloads</h6>
+                <h5 class="mt-2 mb-2">Manually Downloads</h5>
                 <a href="https://drive.google.com/file/d/1PPDTOBsgHSQtYxw7kfgGFtQcvJhf7z-2/view?usp=sharing" target="_blank" class="btn btn-outline-primary mr-2">
                   <i class="fas fa-download mr-2"></i>Empty Project
                 </a>
-                <a href="https://drive.google.com/file/d/1TxH54jXhSVUayGBvRO98R27tVKfLmsFx/view?usp=sharing" target="_blank" class="btn btn-outline-success mr-2">
+                <a href="https://drive.google.com/file/d/1TxH44jXhSVUayGBvRO98R27tVKfLmsFx/view?usp=sharing" target="_blank" class="btn btn-outline-success mr-2">
                   <i class="fas fa-download mr-2"></i>with Examples and Docs
                 </a>
                 <a href="https://github.com/TummanoonW/Proto-Framework" target="_blank" class="btn btn-outline-info mr-2">
@@ -67,7 +68,7 @@
                 </a>
               </div>
               <div class="container mt-4">
-                <h6 class="mt-2 mb-2">Unzip & Setup</h6>
+                <h5 class="mt-2 mb-2">Unzip & Setup</h5>
                 <p class="mb-2">
                   Once you downloaded the file (which is .zip), extract the file to XAMPP (or alike) at directory <strong>htdocs</strong> as the following picture.
                 </p>
@@ -79,7 +80,7 @@
               </div>
             </div>
             <div class="pt-3 pb-2">
-              <h5 id="item-1-3">Make your first page</h5>
+              <h4 id="item-1-3">Make your first page</h4>
               <div class="container mt-4">
                 <p>Next, let's start make some new page. Open Visual Studio Code (or alike) then open the project directory you've placed. It should look like the following picture.</p>
                 <img src="<?php Asset::embedImage($dir, 'img3.png') ?>" class="w-75 h-auto p2 mb-4">
@@ -132,7 +133,7 @@
           </div>
                     
           <div class="container mt-4">  
-            <h4 id="item-2" class="mt-4">Next Step!</h4>
+            <h3 id="item-2" class="mt-4">Next Step!</h3>
             <p>Now you are ready to code more with Proto-Framework.</p>
             <a href="<?php Nav::echoURL($dir, App::$pageDocs) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>

@@ -14,6 +14,11 @@
                     <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsConfig) ?>">Config</a>
                     <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsRoute) ?>">Route</a>
                     <a class="nav-link my-1 h5 active" href="#item-0">Function</a>
+                    <nav class="nav nav-pills flex-column">
+                      <a class="nav-link ml-3" href="#item-1">Guide</a>
+                      <a class="nav-link ml-3" href="#item-2">Example</a>
+                      <a class="nav-link ml-3" href="#item-3">Next Step</a>
+                    </nav>
                     <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsAsset) ?>">Asset</a>
                   </div>
                 </div>
@@ -29,20 +34,24 @@
         public static function initPageGetStart($dir){
 ?>
           <div class="container">
-              <h3 id="item-0">Function</h3>
-              <iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            </div>
-            <div class="container mt-4">
-              <h4 id="item-1">Guides</h4>
-              <div class="pt-3 pb-2">
-                <p></p>
-              </div>
-            </div>
-            <div class="container mt-4">
-              <h4 id="item-2" class="mt-4">Next Step!</h4>
-              <p>Now you are ready to code more with Proto-Framework.</p>
-              <a href="<?php Nav::echoURL($dir, App::$pageDocsAsset) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
-            </div>
+            <h2 id="item-0">Function</h2>
+            <!--<iframe class="youtube mt-1" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>-->
+            <img src="<?php Asset::embedThumb($dir, 'banner.png') ?>">
+          </div>
+          <div class="container mt-4">
+            <h3 id="item-1">Guides</h3>
+            <p></p>
+          </div>
+          <hr>
+          <div class="container mt-4">
+            <h3 id="item-2">Example</h3>
+          </div>
+          <hr>
+          <div class="container mt-4">
+            <h3 id="item-2">Next Step!</h3>
+            <p>Now you are ready to code more with Proto-Framework.</p>
+            <a href="<?php Nav::echoURL($dir, App::$pageDocsAsset) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
+          </div>
 <?php
         }
     }

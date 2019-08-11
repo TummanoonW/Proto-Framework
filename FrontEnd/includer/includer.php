@@ -10,14 +10,6 @@
             }
         }
 
-        //Include all files within 'structure' directory
-        //Structure is obsolete and was never used
-        public static function include_structure($dir){
-            foreach (glob($dir . "structure/*.php") as $filename){
-                include_once $filename;
-            }
-        }
-
         //Include all files within 'layout' directory
         public static function include_layout($dir){
             foreach (glob($dir . "component/layout/*.php") as $filename){
@@ -32,7 +24,6 @@
             }
 
             self::include_config($dir);
-            self::include_structure($dir);
             self::include_layout($dir);
         }
 
