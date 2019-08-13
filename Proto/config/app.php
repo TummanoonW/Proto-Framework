@@ -35,6 +35,7 @@
         public static $pageExAPI = "pages/examples/ex-api.php";
         public static $pageExOffDB = "pages/examples/ex-off-db.php";
         public static $pageProtoAPI = "pages/proto-api/";
+        public static $pageProtoDB = "pages/proto-db/";
         /* --- Web Page file names --- */
 
 

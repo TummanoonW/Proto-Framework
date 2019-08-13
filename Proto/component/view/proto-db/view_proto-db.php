@@ -1,5 +1,5 @@
 <?php
-    class ProtoAPIView{
+    class ProtoDBView{
         public static function initView($dir, $paths){
 ?>
             

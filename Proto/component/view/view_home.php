@@ -44,7 +44,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.
                   </p>
                   <hr class="half-rule">
-                  <a href="#" class="btn btn-outline-primary">Explore the docs</a>
+                  <a href="<?php Nav::echoURL($dir, App::$pageProtoDB) ?>" class="btn btn-outline-primary">Explore the docs</a>
                 </div>
                 <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                   <i class="fas fa-code-branch text-info size32 mb-2"></i>                  
@@ -62,7 +62,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.                  
                   </p>
                   <hr class="half-rule">
-                  <a href="#" class="btn btn-outline-primary">See the architecture</a>
+                  <a href="<?php Nav::echoURL($dir, App::$pageDocsIntroduction) ?>" class="btn btn-outline-primary">See the architecture</a>
                 </div>
                 <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
                   <i class="fas fa-graduation-cap text-info size32 mb-2"></i>                  

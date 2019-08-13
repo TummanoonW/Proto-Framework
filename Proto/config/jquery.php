@@ -1,4 +1,5 @@
 <?php
+    ////* IN DEVELOPMENT --- NOT RECOMMENDED TO USE IT RIGHT NOW
     class JQuery{
         public static function form($formId, $btnId, $actionURL, $redirectURL){
             echo "<script>
@@ -16,9 +17,5 @@
                     });
                 };
             </script>";
-        }
-
-        public static function get($url){
-            echo '<script>' . '</script>';
         }
     }

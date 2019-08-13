@@ -36,8 +36,8 @@
                     More
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExAPI); ?>">Proto API</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB); ?>">Proto DB</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoAPI); ?>">Proto API Docs</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoDB); ?>">Proto DB Docs</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageFeedback); ?>">Send a feedback</a>
