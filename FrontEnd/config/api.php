@@ -48,7 +48,7 @@
             $output = curl_exec($curlSession);
             $response = json_decode($output);
             curl_close($curlSession);
-
+            
             return $response;
         }
 

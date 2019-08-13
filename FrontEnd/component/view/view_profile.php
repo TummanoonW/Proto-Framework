@@ -17,12 +17,12 @@
                     <input value="<?php echo $auth->email ?>" type="email" name="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" disabled>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputUsername">New Username (Optional)</label>
-                    <input value="<?php echo $auth->username ?>" type="text" name="username" class="form-control" id="exampleInputUsername" placeholder="Enter new username">
+                    <label for="exampleInputUsername">New Username (Optional) (max 20 letters)</label>
+                    <input value="<?php echo $auth->username ?>" type="text" name="username" class="form-control" id="exampleInputUsername" placeholder="Enter new username" maxlength="20">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword">New Password (Optional)</label>
-                    <input value="" type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Enter new password">
+                    <label for="exampleInputPassword">New Password (Optional) (max 12 letters)</label>
+                    <input value="" type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Enter new password" maxlength="12">
                   </div>
                   
                   <button type="submit" class="btn btn-success">Update Profile</button>

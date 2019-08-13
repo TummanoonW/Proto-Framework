@@ -1,10 +1,14 @@
 <?php
     class App{
+        /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
         public static $framework = "Proto-Framework";
         public static $version = "4.5";
         public static $lastUpdate = "2019/07/28 23:00:00";
         public static $platform = ["PHP", "HTML", "JS", "CSS", "Front-End"]; 
+
+        public static $debuggingMode = TRUE;
+        /* ---------------------------------------------*/
 
 
         /* --- Web Page file names --- */
@@ -39,6 +43,7 @@
         public static $routeProfile = "route/profile.php";
         public static $routeLogOut = "route/logout.php";
         public static $routeExample = "route/example.php";
+        public static $routeFeedback = "route/feedback.php";
         /* --- Web Route file names --- */
 
 
@@ -47,6 +52,7 @@
         public static $apiAuth = "index.php";
         public static $apiProfile = "profile.php";
         public static $apiExample = "example.php";
+        public static $apiFeedback = "feedback.php";
         /* --- API file names --- */
 
     }

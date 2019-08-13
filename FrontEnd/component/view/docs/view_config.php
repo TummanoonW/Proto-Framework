@@ -21,7 +21,8 @@
                         <a class="nav-link ml-3" href="#item-6">Asset</a>
                         <a class="nav-link ml-3" href="#item-7">CustomDate</a>
                         <a class="nav-link ml-3" href="#item-8">Path</a>
-                        <a class="nav-link ml-3" href="#item-9">Next Step</a>
+                        <a class="nav-link ml-3" href="#item-9">Console</a>
+                        <a class="nav-link ml-3" href="#item-10">Next Step</a>
                     </nav>
                     <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsRoute) ?>">Route</a>
                     <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsFunction) ?>">Function</a>
@@ -84,6 +85,11 @@
                   <th>$platform</th>
                   <td></td>
                   <td>The array of string containing the key words indicated the platform it's running on.</td>
+                </tr>
+                <tr>
+                  <th>$debuggingMode</th>
+                  <td></td>
+                  <td>The value of boolean which determines function Console::log() from the entire project.</td>
                 </tr>
                 <tr>
                   <th>$apiURL</th>
@@ -471,7 +477,35 @@
           </div> 
           <hr>
           <div class="container mt-4">
-            <h3 id="item-9" class="mt-4">Next Step!</h3>
+            <h3 id="item-9">Console</h3>
+            <p></p>
+            <h4>Class (static): Console</h4>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Function</th>
+                  <th scope="col">Parameter(s)</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>log($label, $objArr)</th>
+                  <td>
+                    <p><span class="text-primary">$label</span> as the value of string.</p>
+                    <p><span class="text-primary">$objArr</span> as the value of object or array</p>
+                  </td>
+                  <td>
+                    <p>The function to manipulate javascript to call the method <span class="text-info">console.log()</span> and also give parameter of label and object/array into it. It is generally used to display some result of the data on the console.</p>
+                    <p class="text-danger">Note: However, the function can be disable and enable through out the entire app by changing the value of <span class="text-primary">$debuggingMode</span> from the class <a href="#item-1">App</a></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div> 
+          <hr>
+          <div class="container mt-4">
+            <h3 id="item-10" class="mt-4">Next Step!</h3>
             <a href="<?php Nav::echoURL($dir, App::$pageDocsRoute) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>
 <?php
