@@ -11,10 +11,10 @@
                             <a class="nav-link" href="https://github.com/TummanoonW/Proto-Framework" target="_blank">Github</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Back-End version</a>
+                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Get Start</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Get Start</a>
+                            <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageProtoAPI) ?>">Proto API</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageAbout) ?>">About</a>
