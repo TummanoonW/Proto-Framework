@@ -9,10 +9,8 @@
         }
 
         public static function add($api, $form){
-            $item = new Item($form);
-
             $url = $api->getURL(App::$apiExample, 'add', NULL);
-            $result = $api->post($url, $item);
+            $result = $api->post($url, $form);
 
             return $result;           
         }
