@@ -3,7 +3,7 @@
         /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
         public static $framework = "Proto-Framework";
-        public static $version = "4.5";
+        public static $version = "4.6";
         public static $lastUpdate = "2019/08/13 23:00:00";
         public static $platform = ["PHP", "HTML", "JS", "CSS", "Front-End"]; 
 
