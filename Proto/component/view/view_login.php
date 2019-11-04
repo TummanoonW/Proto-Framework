@@ -2,6 +2,11 @@
     class LoginView{ //login HTML elements loader
 
         public static function initView($dir){
+          $items = [
+            (object)array('name' => 'Tom', 'text' => 'He is a cat'),
+            (object)array('name' => 'Jerry', 'text' => 'He is a mouse'),
+            (object)array('name' => 'Betty', 'text' => 'He is a big dog')
+          ];
 ?>  
           <div class="container padding-top">
               <div class="text-center">
@@ -27,8 +32,19 @@
                    <a href="<?php Nav::echoURL($dir, App::$pageResetPassword); ?>" class="btn btn-light btn-block">Forgot password?</a>
                 </div>
               </form>
+              <div>
+              <?php self::initCards($dir, $items); ?>
+              </div>
           </div>
 <?php
+        }
+
+        private static function initCards($dir, $items){
+          foreach ($items as $key => $item) {
+          ?>
+            <p><? echo $item->name ?> : <? echo $item->text ?></p>
+          <?php
+          }
         }
 
     }

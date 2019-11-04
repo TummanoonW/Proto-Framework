@@ -72,7 +72,7 @@
               </div>
             </div>
           </nav>
-<?
+<?php
             }
 
             public static function printActive($active, $title){
