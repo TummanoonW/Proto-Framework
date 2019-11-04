@@ -4,6 +4,7 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = './';
+
     include $dir . 'includer/includer.php'; //include Includer file to operate
     Includer::include_proto($dir);
     Includer::include_fun($dir, 'fun_example.php'); //call a specified-function that would trigger include-effect

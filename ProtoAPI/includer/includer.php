@@ -25,6 +25,10 @@
 
         //An include a class of functions by given filename
         public static function include_fun($dir, $file){
+            $arr = explode(".", $file);
+            $lenght = count($arr);
+            if($lenght == 1) $file = $file . ".php";
+            
             include_once $dir . 'function/' . $file;
         }
 

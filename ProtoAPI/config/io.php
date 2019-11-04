@@ -22,7 +22,7 @@
             }
 
             //use method 'GET' as JSON to get anything
-            $get = json_decode($_GET);
+            $get = (object)$_GET;
 
             //use method 'POST/PUT' (aka 'input') as JSON to post anything
             $p = file_get_contents('php://input');

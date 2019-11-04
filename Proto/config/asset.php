@@ -13,24 +13,36 @@
         public static $image_def = "assets/images/def.png";
 
         public static function echoIcon($dir, $url){
-            if(file_exists($url)){
-                echo $url;
+            if($url != ''){
+                if(curl_init($url)){
+                    echo $url;
+                }else{
+                    echo $dir . self::$icon_def;
+                }
             }else{
                 echo $dir . self::$icon_def;
             }
         }
 
         public static function echoThumb($dir, $url){
-            if(file_exists($url)){
-                echo $url;
+            if($url != ''){
+                if(curl_init($url)){
+                    echo $url;
+                }else{
+                    echo $dir . self::$thumb_def;
+                }
             }else{
                 echo $dir . self::$thumb_def;
             }
         }
         
         public static function echoImage($dir, $url){
-            if(file_exists($url)){
-                echo $url;
+            if($url != ''){
+                if(curl_init($url)){
+                    echo $url;
+                }else{
+                    echo $dir . self::$image_def;
+                }
             }else{
                 echo $dir . self::$image_def;
             }

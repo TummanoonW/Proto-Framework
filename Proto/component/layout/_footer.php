@@ -23,7 +23,7 @@
 
                         <div class="p-3">
                             <p>Designed and built by <a href="<?php Nav::echoURL($dir, App::$pageAbout) ?>">Tummanoon Wancha-em</a> with the help of <a href="https://github.com/TummanoonW/Proto-Framework/graphs/contributors" target="_blank">our contributors</a>.</p>
-                            <p>Currently v<?php echo App::$version ?>. Code licensed <a href="https://github.com/TummanoonW/Proto-Framework/blob/master/LICENSE" target="_blank" rel="license noopener">MIT </a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+                            <p>Powered by <a href="https://www.trialation.com/proto-framework/" target="_blank"><?php echo App::$framework ?></a> .Currently v<?php echo App::$version ?>. Code licensed <a href="https://github.com/TummanoonW/Proto-Framework/blob/master/LICENSE" target="_blank" rel="license noopener">MIT </a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
                         </div>
                       </div>
                     </footer>

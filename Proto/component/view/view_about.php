@@ -5,6 +5,7 @@
           <div class="jumbotron bg-light padding-top">
             <h1 class="display-4"><?php echo App::$name ?></h1>
             <p class="lead"><i class="fas fa-code"></i>&nbsp; Developed by Tummanoon Wancha-em</p>
+            <p>Powered by <a href="https://www.trialation.com/proto-framework/" target="_blank"><?php echo App::$framework ?></a></p>
             <p>Published by <a target="_blank" href="https://www.trialation.com/">Trialation</a></p>
             <p>License - <a href="https://github.com/TummanoonW/Proto-Framework/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a></p>              
             <p>Version - <?php echo App::$version ?></p>
