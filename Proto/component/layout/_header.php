@@ -33,6 +33,8 @@
 
                 <!-- Custom Style -->
                 <?php Style::customStyle($dir, 'main.css');  ?>
+
+                <script>var json = null;</script>
             </head>
 
             <body>
