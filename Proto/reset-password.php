@@ -4,9 +4,9 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory
-    include_once $dir . 'includer/includer.php';
-    Includer::include_proto($dir);
-    Includer::include_view($dir, 'view_reset-password.php');
+    include_once $dir . '@proto/app.php';
+    App::include_proto($dir);
+    App::include_view($dir, 'view_reset-password.php');
 
 
     Header::initHeader($dir, "Reset Password", FALSE, '', FALSE);

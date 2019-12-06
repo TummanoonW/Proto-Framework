@@ -4,9 +4,9 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = './';
-    include $dir . 'includer/includer.php'; //include Includer file to operate
-    Includer::include_proto($dir);
-    Includer::include_fun($dir, 'fun_auth.php'); //call a specified-function that would trigger include-effect
+    include $dir . '@proto/app.php'; //include Includer file to operate
+    App::include_proto($dir);
+    App::include_fun($dir, 'fun_auth.php'); //call a specified-function that would trigger include-effect
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
     $conn = new Connect(App::$CONFIG); //open Connection

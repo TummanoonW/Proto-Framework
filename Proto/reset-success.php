@@ -4,9 +4,9 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory
-    include_once $dir . 'includer/includer.php'; 
-    Includer::include_proto($dir); 
-    Includer::include_view($dir, 'view_reset-success.php');
+    include_once $dir . '@proto/app.php'; 
+    App::include_proto($dir); 
+    App::include_view($dir, 'view_reset-success.php');
 
     $io = new IO(); 
 

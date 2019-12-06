@@ -4,9 +4,9 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory
-    include_once $dir . 'includer/includer.php'; //include Includer file to operate
-    Includer::include_proto($dir); //include Proto Framework Architecture
-    Includer::include_view($dir, 'view_register-success.php');
+    include_once $dir . '@proto/app.php'; //include Includer file to operate
+    App::include_proto($dir); //include Proto Framework Architecture
+    App::include_view($dir, 'view_register-success.php');
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 

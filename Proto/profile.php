@@ -4,9 +4,9 @@
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory
-    include_once $dir . 'includer/includer.php'; //include Includer file to operate
-    Includer::include_proto($dir); //include Proto Framework Architecture
-    Includer::include_view($dir, 'view_profile.php');
+    include_once $dir . '@proto/app.php'; //include Includer file to operate
+    App::include_proto($dir); //include Proto Framework Architecture
+    App::include_view($dir, 'view_profile.php');
 
     $auth = Session::getAuth(); //get Logged In user
 
