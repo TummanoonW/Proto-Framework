@@ -7,7 +7,7 @@
                 <h2><i class="fas fa-server mr-3"></i>Money Saving App</h2>
                 <h5 class="mt-4">Proto API example (Back-End version)</h5>
 
-                <form action="<?php Nav::echoURL($dir, App::$routeExample . '?m=add') ?>" method="POST" class="input-group mb-3 mt-4">
+                <form action="<?php Nav::echoURL($dir, "router/example.php" . '?m=add') ?>" method="POST" class="input-group mb-3 mt-4">
                   <input name="text" type="text" class="form-control" placeholder="description" aria-label="description" aria-describedby="button-addon2">
                   <input name="value" type="number" class="form-control" placeholder="saving / spending (&#3647;)" aria-label="saving / spending (&#3647;)" aria-describedby="button-addon2">
                   <div class="input-group-append">
@@ -19,7 +19,7 @@
                 
                 <div class="list-group">
                     <?php foreach ($items as $key => $value) { ?>
-                        <a href="<?php Nav::echoURL($dir, App::$routeExample . "?m=remove&id=$value->ID") ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <a href="<?php Nav::echoURL($dir, "router/example.php" . "?m=remove&id=$value->ID") ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <h6><?php echo $value->text ?>
                                 <div class="pt-2"><small class="text-muted"><?php echo $value->date ?></small></div>
                             </h6>

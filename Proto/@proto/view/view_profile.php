@@ -6,7 +6,7 @@
           <div class="container padding-top">
               <?php Breadcrumb::initBreadcrumb($dir, $paths); ?>    
               <div class="card">
-                <form class="card-body" action="<?php Nav::echoURL($dir, App::$routeProfile . '?m=edit&id=' . $auth->ID ) ?>" method="POST">
+                <form class="card-body" action="<?php Nav::echoURL($dir, "router/profile.php" . '?m=edit&id=' . $auth->ID ) ?>" method="POST">
                   <h5 class="card-title"><?php echo $auth->username ?>'s Profile</h5>
                   <div class="form-group">
                     <label for="exampleInputID">User ID</label>
@@ -26,7 +26,7 @@
                   </div>
                   
                   <button type="submit" class="btn btn-success">Update Profile</button>
-                  <a href="<?php Nav::echoURL($dir, App::$routeLogOut); ?>" class="btn btn-outline-danger">
+                  <a href="<?php Nav::echoURL($dir, "router/logout.php"); ?>" class="btn btn-outline-danger">
                       <i class="fas fa-sign-out-alt"></i>
                       Log Out
                   </a>

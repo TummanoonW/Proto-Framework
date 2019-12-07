@@ -2,14 +2,14 @@
     class FunExample{
 
         public static function all($api){
-            $url = $api->getURL(App::$apiExample, 'all', NULL);
+            $url = $api->getURL("example.php", 'all', NULL);
             $result = $api->get($url);
 
             return $result; 
         }
 
         public static function add($api, $form){
-            $url = $api->getURL(App::$apiExample, 'add', NULL);
+            $url = $api->getURL("example.php", 'add', NULL);
             $result = $api->post($url, $form);
 
             return $result;           
@@ -19,7 +19,7 @@
             $item = new StdClass();
             $item->id = $id;
 
-            $url = $api->getURL(App::$apiExample, 'remove', $item);
+            $url = $api->getURL("example.php", 'remove', $item);
             $result = $api->get($url);
 
             return $result;  

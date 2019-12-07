@@ -30,7 +30,7 @@
             $result = FunAuth::register($api, $form); //connect to API requesting login method
             if($result->success){ //if the API return result
                 $auth = $result->response;
-                Nav::goto($dir, App::$pageRegisterSuccess . '?q={"username": "' . $auth->username . '"}'); //redirect to profile page
+                Nav::goto($dir, 'register-success.php' . '?q={"username": "' . $auth->username . '"}'); //redirect to profile page
             }else{
                 ErrorPage::initPage($dir, $result);
             }
@@ -41,7 +41,7 @@
             $result = FunAuth::resetPassword($api, $form);
             if($result->success){
                 $email = $form->email;
-                Nav::goto($dir, App::$pageResetSuccess . '?q={"email": "' . $email . '"}');
+                Nav::goto($dir, 'reset-success.php' . '?q={"email": "' . $email . '"}');
             }else{
                 ErrorPage::initPage($dir, $result);
             }

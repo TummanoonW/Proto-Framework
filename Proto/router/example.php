@@ -17,7 +17,7 @@
             $form = $io->post;
             $result = FunExample::add($api, $form); 
             if($result->success){ 
-                Nav::goto($dir, App::$pageExAPI);
+                Nav::goto($dir, "page/examples/ex-api.php");
             }else{
                 ErrorPage::initPage($dir, $result);
             }
@@ -27,7 +27,7 @@
             $id = $io->id;
             $result = FunExample::remove($api, $id); 
             if($result->success){ 
-                Nav::goto($dir, App::$pageExAPI); 
+                Nav::goto($dir, "page/examples/ex-api.php"); 
             }else{
                 ErrorPage::initPage($dir, $result);
             }

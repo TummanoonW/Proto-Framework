@@ -6,8 +6,8 @@
         /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
         public static $framework = "Proto-Framework";
-        public static $version = "5.0";
-        public static $lastUpdate = "2019/11/21 23:00:00";
+        public static $version = "5.1";
+        public static $lastUpdate = "2019/12/07 23:00:00";
         public static $platform = ["PHP", "HTML", "JS", "CSS", "Front-End"]; 
         
         //database configuration
@@ -20,62 +20,13 @@
         
         public static $debuggingMode = TRUE;
         
-        public static $iconURL = "asset/images/logo/primary.svg";
-        public static $icon_path = "asset/images/icons/";
-        public static $thumb_path = "asset/images/thumbs/";
-        public static $image_path = "asset/images/";
         public static $icon_def = "asset/images/icons/def.svg";
         public static $thumb_def = "asset/images/thumbs/def.png";
         public static $image_def = "asset/images/def.png";
+
+        public static $apiURL = "https://www.trialation.com/proto-api/"; //base URL to call API
         /* ---------------------------------------------*/
         
-        
-        /* --- Web Page file names --- */
-        public static $pageAbout = "about.php";
-        public static $pageLogin = "login.php";
-        public static $pageRegister = "register.php";
-        public static $pageProfile = "profile.php";
-        public static $pageFeedback = "feedback.php";
-        public static $pageRegisterSuccess = "register-success.php";
-        public static $pageResetPassword = "reset-password.php";  
-        public static $pageResetSuccess = "reset-success.php";
-        
-        public static $pageDocs = "page/docs/";
-        public static $pageDocsIntroduction = "page/docs/introduction.php";
-        public static $pageDocsIncluder = "page/docs/includer.php";
-        public static $pageDocsComponent = "page/docs/component.php";
-        public static $pageDocsPages = "page/docs/pages.php";
-        public static $pageDocsConfig = "page/docs/config.php";
-        public static $pageDocsRoute = "page/docs/route.php";
-        public static $pageDocsFunction = "page/docs/function.php";
-        public static $pageDocsAsset = "page/docs/asset.php";
-        
-        
-        public static $pageExAPI = "page/examples/ex-api.php";
-        public static $pageExOffDB = "page/examples/ex-off-db.php";
-        public static $pageProtoAPI = "page/proto-api/";
-        public static $pageProtoDB = "page/proto-db/";
-        /* --- Web Page file names --- */
-        
-        
-        /* --- Web Route file names --- */
-        public static $routeAuth = "router/auth.php";
-        public static $routeProfile = "router/profile.php";
-        public static $routeLogOut = "router/logout.php";
-        public static $routeExample = "router/example.php";
-        public static $routeFeedback = "router/feedback.php";
-        /* --- Web Route file names --- */
-        
-        
-        /* --- API file names --- */
-        public static $apiURL = "https://www.trialation.com/proto-api/"; //base URL to call API
-        public static $apiAuth = "index.php";
-        public static $apiProfile = "profile.php";
-        public static $apiExample = "example.php";
-        public static $apiFeedback = "feedback.php";
-        /* --- API file names --- */
-
-
         //Include all files within 'library' directory
         public static function include_library($dir){
             foreach (glob($dir . "@proto/library/*.php") as $filename){

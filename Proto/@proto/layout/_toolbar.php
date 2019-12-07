@@ -20,15 +20,15 @@
                   <a class="nav-link" href="<?php Nav::echoHome($dir); ?>">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php self::printActive($active, 'Docs'); ?>">
-                  <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageDocs); ?>">Docs</a>
+                  <a class="nav-link" href="<?php Nav::echoURL($dir, 'page/docs/'); ?>">Docs</a>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'Examples'); ?>">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Samples
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExAPI) ?>">Proto API Project</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageExOffDB) ?>">Proto DB Project</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/examples/ex-api.php") ?>">Proto API Project</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/examples/ex-off-db.php") ?>">Proto DB Project</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'More'); ?>">
@@ -36,12 +36,12 @@
                     More
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoAPI); ?>">Proto API Docs</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageProtoDB); ?>">Proto DB Docs</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/proto-api/"); ?>">Proto API Docs</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/proto-db/"); ?>">Proto DB Docs</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageFeedback); ?>">Send a feedback</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, App::$pageAbout); ?>">About</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, 'feedback.php'); ?>">Send a feedback</a>
+                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, 'about.php'); ?>">About</a>
                   </div>
                 </li>
               </ul>
@@ -51,19 +51,19 @@
                 <ul class="navbar-nav mr-auto">
                   <?php if(Session::checkUserExisted()){ ?>
                     <li class="nav-item <?php self::printActive($active, 'Profile'); ?>">
-                      <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageProfile); ?>">
+                      <a class="nav-link" href="<?php Nav::echoURL($dir, 'profile.php'); ?>">
                         <i class="far fa-user"></i>
                         <?php echo $auth->username ?> 
                       </a>
                     </li>
                   <?php }else{ ?>
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageRegister); ?>">
+                      <a class="nav-link" href="<?php Nav::echoURL($dir, 'register.php'); ?>">
                         Register
                       </a>
                     </li>  
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php Nav::echoURL($dir, App::$pageLogin); ?>">
+                      <a class="nav-link" href="<?php Nav::echoURL($dir, 'login.php'); ?>">
                         Log In
                       </a>     
                     </li>            

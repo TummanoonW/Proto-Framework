@@ -13,7 +13,7 @@
     if(Session::checkUserExisted()){
         $paths = array(
             new Path(FALSE, "Home",     Nav::getHome($dir)),
-            new Path(TRUE,  "Profile",  Nav::getURL($dir, App::$pageProfile))
+            new Path(TRUE,  "Profile",  Nav::getURL($dir, 'profile.php'))
         );
 
         Header::initHeader($dir, "$auth->username - Profile", TRUE, 'Profile', TRUE); //initialize HTML header elements with 'Profile' as Title

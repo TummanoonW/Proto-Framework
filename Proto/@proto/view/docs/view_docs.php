@@ -16,14 +16,14 @@
                       </nav>
                       <a class="nav-link ml-3" href="#item-2">Next Step</a>
                     </nav>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsIntroduction) ?>">Introduction</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsIncluder) ?>">Includer</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsComponent) ?>">Component</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsPages) ?>">Pages</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsConfig) ?>">Config</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsRoute) ?>">Route</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsFunction) ?>">Function</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsAsset) ?>">Asset</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/introduction.php') ?>">Introduction</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/includer.php') ?>">Includer</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/component.php') ?>">Component</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/pages.php') ?>">Pages</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/config.php') ?>">Config</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/route.php') ?>">Route</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/function.php') ?>">Function</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/asset.php') ?>">Asset</a>
                   </div>
                 </div>
                 <div class="col-sm-11 col-md-9">
@@ -135,7 +135,7 @@
           <div class="container mt-4">  
             <h3 id="item-2" class="mt-4">Next Step!</h3>
             <p>Now you are ready to code more with Proto-Framework.</p>
-            <a href="<?php Nav::echoURL($dir, App::$pageDocs) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="<?php Nav::echoURL($dir, 'page/docs/') ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>
 <?php
         }

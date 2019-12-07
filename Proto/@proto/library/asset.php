@@ -38,7 +38,7 @@
         }
 
         public static function embedIcon($dir, $file){
-            $path = $dir . App::$icon_path . $file;
+            $path = $dir . "asset/images/icons/" . $file;
             if(file_exists($path)){
                 echo $path;
             }else{
@@ -47,7 +47,7 @@
         }
 
         public static function embedThumb($dir, $file){
-            $path = $dir . App::$thumb_path . $file;
+            $path = $dir . "asset/images/thumbs/" . $file;
             if(file_exists($path)){
                 echo $path;
             }else{
@@ -56,7 +56,7 @@
         }
 
         public static function embedImage($dir, $file){
-            $path = $dir . App::$image_path . $file;
+            $path = $dir . "asset/images/" . $file;
             if(file_exists($path)){
                 echo $path;
             }else{

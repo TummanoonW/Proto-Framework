@@ -32,7 +32,7 @@
                         $auth = Session::getAuth();
                         $auth->username = $form->username;
                         Session::logIn($auth); //update username
-                        Nav::goto($dir, App::$pageProfile);
+                        Nav::goto($dir, 'profile.php');
                     }else{
                         ErrorPage::initPage($dir, $result);
                     }

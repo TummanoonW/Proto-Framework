@@ -14,7 +14,7 @@
                   <br><br>
                   <h4><?php echo App::$name; ?></h4>
               </div>
-              <form class="padding-top" action="<?php Nav::echoURL($dir, App::$routeAuth . "?m=login"); ?>" method="POST">
+              <form class="padding-top" action="<?php Nav::echoURL($dir, "router/auth.php" . "?m=login"); ?>" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -25,11 +25,11 @@
                   <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="padding-top">
-                  <a href="<?php Nav::echoURL($dir, App::$pageRegister); ?>" class="btn btn-outline-primary btn-block">Register</a>
+                  <a href="<?php Nav::echoURL($dir, 'register.php'); ?>" class="btn btn-outline-primary btn-block">Register</a>
                   <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </div>
                 <div class="padding-top">
-                   <a href="<?php Nav::echoURL($dir, App::$pageResetPassword); ?>" class="btn btn-light btn-block">Forgot password?</a>
+                   <a href="<?php Nav::echoURL($dir, 'reset-password.php'); ?>" class="btn btn-light btn-block">Forgot password?</a>
                 </div>
               </form>
               <div>

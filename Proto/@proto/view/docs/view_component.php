@@ -6,9 +6,9 @@
               <div class="row w-100">
                 <div class="col-sm-1 col-md-3 navbar-collapse">
                   <div class="nav flex-column nav-pills">
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocs) ?>">Get Start</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsIntroduction) ?>">Introduction</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsIncluder) ?>">Includer</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/') ?>">Get Start</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/introduction.php') ?>">Introduction</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/includer.php') ?>">Includer</a>
                     <a class="nav-link my-1 h5 active" href="#item-0">Component</a>
                     <nav class="nav nav-pills flex-column">
                       <a class="nav-link ml-3" href="#item-1">Layout</a>
@@ -25,11 +25,11 @@
                       <a class="nav-link ml-3" href="#item-2">View</a>
                       <a class="nav-link ml-3" href="#item-3">Next Step</a>
                     </nav>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsPages) ?>">Pages</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsConfig) ?>">Config</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsRoute) ?>">Route</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsFunction) ?>">Function</a>
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, App::$pageDocsAsset) ?>">Asset</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/pages.php') ?>">Pages</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/config.php') ?>">Config</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/route.php') ?>">Route</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/function.php') ?>">Function</a>
+                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/asset.php') ?>">Asset</a>
                   </div>
                 </div>
                 <div class="col-sm-11 col-md-9">
@@ -132,7 +132,7 @@
                     <th><a href="#item-1-1">initBreadcrumb($dir, $paths)</a></th>
                     <td>
                       <p><span class="text-primary">$dir</span> as the location of the current directory</p>
-                      <p><span class="text-primary">$paths</span> as the array of <a href="<?php Nav::echoURL($dir, App::$pageDocsConfig . "#item-8") ?>">Paths</a></p>
+                      <p><span class="text-primary">$paths</span> as the array of <a href="<?php Nav::echoURL($dir, 'page/docs/config.php' . "#item-8") ?>">Paths</a></p>
                     </td>
                   </tr>
                 </tbody>
@@ -332,7 +332,7 @@
           </div>
           <div class="container mt-4">
             <h3 id="item-3" class="mt-4">Next Step!</h3>
-            <a href="<?php Nav::echoURL($dir, App::$pageDocsPages) ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="<?php Nav::echoURL($dir, 'page/docs/pages.php') ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>
 <?php
         }
