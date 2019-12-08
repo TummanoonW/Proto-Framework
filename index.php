@@ -21,7 +21,7 @@
             </p>
             <a class="btn btn-outline-primary btn-lg" href="https://www.trialation.com/proto-framework-docs/" role="button"><i class="fas fa-code mr-2"></i>Get Start</a>
             &nbsp;
-            <a class="btn btn-outline-success btn-lg" href="https://www.dropbox.com/s/zxdnoi2o2dt7mnx/proto-empty.zip?dl=1" role="button"><i class="fas fa-download mr-2"></i>Download the latest version</a>
+            <a class="btn btn-outline-success btn-lg" href="https://github.com/TummanoonW/Proto-Framework" role="button"><i class="fas fa-download mr-2"></i>Download the latest version</a>
             <hr class="my-4">
             <small>Currently v<?php echo App::$version ?></small>
         </div>

@@ -29,7 +29,7 @@
                 <script src="<?php Nav::echoURL($dir, 'asset/jquery/jquery.min.js'); ?>"></script>
 
                 <!-- Proto-Framework Offline Database -->
-                <script src="<?php Nav::echoURL($dir, 'asset/js/config/connect.js') ?>"></script>
+                <script src="<?php Nav::echoURL($dir, 'asset/js/proto-db/connect.js') ?>"></script>
 
                 <!-- Custom Style -->
                 <?php Style::customStyle($dir, 'main.css');  ?>
