@@ -1,17 +1,19 @@
 <?php
     class File{
+        private $fileInput = NULL;
         private $target_dir = "";
         private $dirName = "";
 
-        function __construct($dir, $target_dir){
+        function __construct($fileInput, $dir, $target_dir){
+            $this->fileInput = $fileInput;
             $this->target_dir = $dir . $target_dir;
             $this->dirName = $target_dir;
         }
 
-        function upload($fileInput, $fileOption){
+        function upload($fileOption){
             $result = new Result();
 
-            $input = $_FILES[$fileInput]["name"];
+            $input = $this->fileInput["name"];
             $uploadOk = FALSE;
             $imageFileType = strtolower(pathinfo($input, PATHINFO_EXTENSION));
             if(count($fileOption->types) > 0){
@@ -26,7 +28,7 @@
                 $result->setResult(FALSE, NULL, Err::$ERR_FILE_INVALID_TYPE);
             }else{
                 if($fileOption->fileName != NULL) $fileName = $fileOption->fileName;  
-                else $fileName = basename($_FILES[$fileInput]["name"]);
+                else $fileName = basename($this->fileInput["name"]);
     
                 if($fileOption->timeStampable){
                     $strs = explode('.', $fileName);
@@ -47,11 +49,11 @@
                     $uploadOk = FALSE;
                     $result->setResult(FALSE, NULL, Err::$ERR_FILE_EXISTED);
                 }else{
-                    if($fileOption->imageVerification && !getimagesize($_FILES[$fileInput]["tmp_name"])){
+                    if($fileOption->imageVerification && !getimagesize($this->fileInput["tmp_name"])){
                         $uploadOk = FALSE;
                         $result->setResult(FALSE, NULL, Err::$ERR_FILE_INVALID);
                     }else{
-                        if ($_FILES[$fileInput]["size"] > $fileOption->limitSize) {
+                        if ($this->fileInput["size"] > $fileOption->limitSize) {
                             $uploadOk = FALSE;
                             $result->setResult(FALSE, NULL, Err::$ERR_FILE_OVERSIZE);
                         }
@@ -60,7 +62,7 @@
             }
 
             if($uploadOk){
-                if (move_uploaded_file($_FILES[$fileInput]["tmp_name"], $target_file)) {
+                if (move_uploaded_file($this->fileInput["tmp_name"], $target_file)) {
                     $uri = '/' . explode('/', $_SERVER['REQUEST_URI'])[1] . '/';
                     $url = "http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $uri;
                     $downloadURL = $url . $this->dirName . $fileName;
@@ -71,52 +73,6 @@
             }
 
             return $result;
-        }
-    }
-
-    class FileOption{
-        public $replacable = FALSE;
-        public $timeStampable = FALSE;
-        public $imageVerification = FALSE;
-        public $fileName = NULL;
-        public $limitSize = 5 * 1000 * 1000; //(5MB)
-        public $types = [];
-
-        function __construct(){
-
-        }
-
-        public function set($replacable, $timeStampable, $imageVerification, $fileName, $limitSize, $types){
-            $this->replacable = $replacable;
-            $this->timeStampable = $timeStampable;
-            $this->imageVerification = $imageVerification;
-            $this->fileName = $fileName;
-            $this->limitSize = $limitSize;
-            $this->types = $types;
-        }
-
-        public function setReplacable($replacable){
-            $this->replacable = $replacable;
-        }
-
-        public function setTimeStampable($timeStampable){
-            $this->timeStampable = $timeStampable;
-        }
-
-        public function setImageVerification($imageVerification){
-            $this->imageVerification = $imageVerification;
-        }
-
-        public function setFileName($fileName){
-            $this->fileName = $fileName;
-        }
-
-        public function setLimitSize($limitSize){
-            $this->limitSize = $limitSize;
-        }
-
-        public function setTypes($types){
-            $this->types = $types;
         }
     }
 
