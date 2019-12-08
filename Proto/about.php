@@ -1,6 +1,6 @@
 <?php
-    //Proto Framework for PHP-HTML5
-    //v4
+    //Proto Framework
+    //v5
     //Developed by Tummanoon Wacha-em
 
     $dir = "./"; //current directory

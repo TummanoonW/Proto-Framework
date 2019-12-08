@@ -7,9 +7,7 @@
     App::include_proto($dir); 
     App::include_fun($dir, 'fun_auth.php');
 
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
+    $conn = new Connect(App::$CONFIG); //open Database connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data
 
     //check if user exists
@@ -26,9 +24,9 @@
                     //if user changed password
                     if($io->post->password != "") $form->password = $io->post->password;
 
-                    $result = FunAuth::editProfile($api, $form);
+                    $result = FunAuth::editProfile($conn, $form);
                         
-                    if($result->success){ //if the API return result
+                    if($result->success){ //if the Database return result
                         $auth = Session::getAuth();
                         $auth->username = $form->username;
                         Session::logIn($auth); //update username

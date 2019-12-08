@@ -31,6 +31,8 @@
                 
                 <!-- Bootstrap -->
                 <script src="<?php Nav::echoURL($dir, 'asset/theme/bootstrap/js/bootstrap.min.js'); ?>"></script>
+
+                <?php Script::customScript($dir, 'main.js') ?>
             </body>
             </html>
 <?php

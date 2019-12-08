@@ -6,9 +6,9 @@
         /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
         public static $framework = "Proto-Framework";
-        public static $version = "5.1";
-        public static $lastUpdate = "2019/12/07 23:00:00";
-        public static $platform = ["PHP", "HTML", "JS", "CSS", "Front-End"]; 
+        public static $version = "5.3";
+        public static $lastUpdate = "2019/12/08 23:59:59";
+        public static $platform = ["PHP", "HTML", "JS", "CSS", "MySQL", "Front-End", "Back-End"]; 
         
         //database configuration
         public static $CONFIG = array(
@@ -24,7 +24,7 @@
         public static $thumb_def = "asset/images/thumbs/def.png";
         public static $image_def = "asset/images/def.png";
 
-        public static $apiURL = "https://www.trialation.com/proto-api/"; //base URL to call API
+        public static $apiURL = "https://www.trialation.com/proto-framework/api/"; //base URL to call API
         /* ---------------------------------------------*/
         
         //Include all files within 'library' directory

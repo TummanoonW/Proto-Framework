@@ -1,21 +1,18 @@
 <?php
-
     $dir = "../";
     include_once $dir . '@proto/app.php'; //include Includer file to operate
 
     //include Proto Framework Architecture with retracked directory path
     App::include_proto($dir); 
-    App::include_fun($dir, 'fun_example.php');
 
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
+    $conn = new Connect(App::$CONFIG); //open Database connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
+    $table = "example";
 
     switch($io->method){
         case 'add':
-            $form = $io->post;
-            $result = FunExample::add($api, $form); 
+            $form = new Item($io->post);
+            $result = Fun::create($conn, $table, $form); 
             if($result->success){ 
                 Nav::goto($dir, "page/examples/ex-api.php");
             }else{
@@ -25,7 +22,7 @@
 
         case 'remove':
             $id = $io->id;
-            $result = FunExample::remove($api, $id); 
+            $result = Fun::delete($conn, $table, $id); 
             if($result->success){ 
                 Nav::goto($dir, "page/examples/ex-api.php"); 
             }else{

@@ -7,16 +7,14 @@
     App::include_proto($dir); 
     App::include_fun($dir, 'fun_auth.php');
 
-    $apiKey = Session::getAPIKey(); //get secret API Key
-
-    $api = new API($apiKey); //open API connection
+    $conn = new Connect(App::$CONFIG); //open Database connection
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
 
     switch($io->method){
         case 'login':
             $form = $io->post;
-            $result = FunAuth::login($api, $form); //connect to API requesting login method
-            if($result->success){ //if the API return result
+            $result = FunAuth::login($conn, $form); //connect to Database requesting login method
+            if($result->success){ //if the Database return result
                 $auth = $result->response;
                 Session::logIn($auth); //save login data to session
                 Nav::gotoHome($dir); //redirect to profile page
@@ -27,8 +25,8 @@
 
         case 'register':
             $form = $io->post;
-            $result = FunAuth::register($api, $form); //connect to API requesting login method
-            if($result->success){ //if the API return result
+            $result = FunAuth::register($conn, $form); //connect to Database requesting login method
+            if($result->success){ //if the Database return result
                 $auth = $result->response;
                 Nav::goto($dir, 'register-success.php' . '?q={"username": "' . $auth->username . '"}'); //redirect to profile page
             }else{
@@ -38,7 +36,7 @@
 
         case 'reset':
             $form = $io->post;
-            $result = FunAuth::resetPassword($api, $form);
+            $result = FunAuth::reset($conn, $form->email, $form->password);
             if($result->success){
                 $email = $form->email;
                 Nav::goto($dir, 'reset-success.php' . '?q={"email": "' . $email . '"}');

@@ -1,13 +1,8 @@
 <?php
-    //Proto Framework
-    //v5
-    //Developed by Tummanoon Wacha-em
-
     $dir = './';
-
     include $dir . '@proto/app.php'; //include Includer file to operate
     App::include_proto($dir);
-    App::include_fun($dir, 'fun_example.php'); //call a specified-function that would trigger include-effect
+    App::include_fun($dir, 'fun_feedback.php'); //call a specified-function that would trigger include-effect
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
     $conn = new Connect(App::$CONFIG); //open Connection
@@ -21,25 +16,13 @@
             $m = $io->method;
 
             switch($m){
-                case 'add':
-                    $form = $io->post;
-                    $result = FunExample::addItem($conn, $form);
+                case 'submit':
+                    $result = FunFeedback::send($conn, $io->post);
                     break;
-
-                case 'remove':
-                    $id = $io->query->id;
-                    $result = FunExample::removeItem($conn, $id);
-                    break;
-
-                case 'all':
-                    $result = FunExample::getItems($conn);
-                    break;
-
                 default:
                     $result = new Result();
                     break;
             }
-
         }
     }
 

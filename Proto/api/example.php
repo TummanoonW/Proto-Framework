@@ -6,7 +6,7 @@
     $dir = './';
 
     include $dir . '@proto/app.php'; //include Includer file to operate
-    App::include_proto($dir);
+    App::include_proto_api($dir);
     App::include_fun($dir, 'fun_example.php'); //call a specified-function that would trigger include-effect
 
     $io = new IO(); //open Input/Output receiver for certain $_GET and $_POST data 
