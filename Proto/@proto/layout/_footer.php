@@ -16,6 +16,9 @@
                           <li class="nav-item">
                             <a class="nav-link" href="https://www.trialation.com/proto-framework-docs/making-apis/" target="_blank">Proto API</a>
                           </li>
+                          <li>
+                            <a class="nav-link" href="https://www.trialation.com/proto-framework-docs/proto-db/" target="_blank">Proto DB</a>
+                          </li>
                           <li class="nav-item">
                             <a class="nav-link" href="<?php Nav::echoURL($dir, 'about.php') ?>">About</a>
                           </li>

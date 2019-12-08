@@ -3,7 +3,6 @@
 
         public static function initToolbar($dir, $active, $sticky){
           $auth = Session::getAuth();
-
 ?>
           <nav class="navbar navbar-expand-md navbar-dark bg-dark <?php if($sticky)echo 'sticky-top'; ?>">
             <a class="navbar-brand" href="<?php Nav::echoHome($dir); ?>">
@@ -36,8 +35,8 @@
                     More
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://www.trialation.com/proto-framework-docs/making-apis/">Proto API Docs</a>
-                    <a class="dropdown-item" href="https://www.trialation.com/proto-framework-docs/proto-db/">Proto DB Docs</a>
+                    <a class="dropdown-item" href="https://www.trialation.com/proto-framework-docs/making-apis/" target="_blank">Proto API Docs</a>
+                    <a class="dropdown-item" href="https://www.trialation.com/proto-framework-docs/proto-db/" target="_blank">Proto DB Docs</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" target="_blank" href="https://github.com/TummanoonW/Proto-Framework">GitHub</a>
                     <a class="dropdown-item" href="<?php Nav::echoURL($dir, 'feedback.php'); ?>">Send a feedback</a>

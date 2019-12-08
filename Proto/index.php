@@ -42,7 +42,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.
               </p>
               <hr class="half-rule">
-              <a class="btn btn-outline-primary" href="https://www.trialation.com/proto-framework-docs/making-apis/">Explore the docs</a>
+              <a class="btn btn-outline-primary" href="https://www.trialation.com/proto-framework-docs/making-apis/" target="_blank">Explore the docs</a>
             </div>
             <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
               <i class="fas fa-database text-info size32 mb-2"></i>                  
@@ -51,7 +51,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.
               </p>
               <hr class="half-rule">
-              <a href="<?php Nav::echoURL($dir, "page/proto-db/") ?>" class="btn btn-outline-primary">Explore the docs</a>
+              <a href="https://www.trialation.com/proto-framework-docs/proto-db/" target="_blank" class="btn btn-outline-primary">Explore the docs</a>
             </div>
             <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
               <i class="fas fa-code-branch text-info size32 mb-2"></i>                  
@@ -69,7 +69,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.                  
               </p>
               <hr class="half-rule">
-              <a href="<?php Nav::echoURL($dir, 'page/docs/introduction.php') ?>" class="btn btn-outline-primary">See the architecture</a>
+              <a href="https://www.trialation.com/proto-framework-docs/introduction/" target="_blank" class="btn btn-outline-primary">See the architecture</a>
             </div>
             <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
               <i class="fas fa-graduation-cap text-info size32 mb-2"></i>                  
@@ -78,7 +78,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.                  
               </p>
               <hr class="half-rule">
-              <a href="#" class="btn btn-outline-primary">Explore tutorials</a>
+              <a href="https://www.youtube.com/playlist?list=PLfan6e7_XlyoylXoPmC-fTINXf-ijYDTZ" class="btn btn-outline-primary">Explore tutorials</a>
             </div>
         </div>
     <?php
