@@ -6,7 +6,7 @@
               <div class="row w-100">
                 <div class="col-sm-1 col-md-3 navbar-collapse">
                   <div class="nav flex-column nav-pills">
-                    <a class="nav-link my-1 h6" href="<?php Nav::echoURL($dir, 'page/docs/') ?>">Get Start</a>
+                    <a class="nav-link my-1 h6" href="https://www.trialation.com/proto-framework-docs/">Get Start</a>
                     <a class="nav-link my-1 h5 active" href="#item-0">Introduction</a>
                     <nav class="nav nav-pills flex-column">
                       <a class="nav-link ml-3" href="#item-1">What is it</a>

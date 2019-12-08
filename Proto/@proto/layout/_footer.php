@@ -11,10 +11,10 @@
                             <a class="nav-link" href="https://github.com/TummanoonW/Proto-Framework" target="_blank">Github</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="<?php Nav::echoURL($dir, 'page/docs/'); ?>">Get Start</a>
+                            <a class="nav-link" href="https://www.trialation.com/proto-framework-docs/" target="_blank">Get Start</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="<?php Nav::echoURL($dir, "page/proto-api/") ?>">Proto API</a>
+                            <a class="nav-link" href="https://www.trialation.com/proto-framework-docs/making-apis/" target="_blank">Proto API</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="<?php Nav::echoURL($dir, 'about.php') ?>">About</a>

@@ -135,7 +135,7 @@
           <div class="container mt-4">  
             <h3 id="item-2" class="mt-4">Next Step!</h3>
             <p>Now you are ready to code more with Proto-Framework.</p>
-            <a href="<?php Nav::echoURL($dir, 'page/docs/') ?>" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="https://www.trialation.com/proto-framework-docs/" class="btn btn-primary">Next<i class="fas fa-arrow-right ml-2"></i></a>
           </div>
 <?php
         }
