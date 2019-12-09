@@ -1,7 +1,4 @@
 <?php
-    //automatically encode UTF8 when Includer is loaded
-    header('Content-Type: text/html; charset=utf-8');
-
     class App{
         /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
@@ -96,6 +93,9 @@
         }
 
     }
+
+    //automatically encode UTF8 when Includer is loaded
+    header('Content-Type: text/html; charset=utf-8');
 
     if(App::$debuggingMode){
         ini_set('display_errors', 1);
