@@ -1,0 +1,4 @@
+ErrorDocument 400 /proto-framework/page/errors/400.php
+ErrorDocument 403 /proto-framework/page/errors/403.php
+ErrorDocument 404 /proto-framework/page/errors/404.php
+ErrorDocument 500 /proto-framework/page/errors/500.php

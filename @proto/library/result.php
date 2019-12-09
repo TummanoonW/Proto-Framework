@@ -28,7 +28,7 @@
 
         //set Err type of arrayObject into $err
         public function setErr($err){
-            $this->err = $err;
+            $this->err = (object)$err;
         }
 
         //return Error code

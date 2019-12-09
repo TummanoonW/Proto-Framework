@@ -16,7 +16,6 @@
             $this->fileName = $fileName;
             $this->limitSize = $limitSize;
             $this->types = $types;
-            return $this;
         }
 
         public function setReplacable($replacable){
