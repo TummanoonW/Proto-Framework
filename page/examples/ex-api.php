@@ -9,8 +9,7 @@
     App::include_view($dir, 'examples/view_api.php');
     App::include_fun($dir, 'fun_example.php');
 
-    $apiKey = Session::getAPIKey(); //get secret API Key
-    $api = new API($apiKey); //open API connection
+    $conn = new Connect(App::$CONFIG); //open API connection
 
     $paths = array(
         new Path(FALSE, "Home", Nav::getHome($dir)),
@@ -33,7 +32,7 @@
         )
     );
 
-    $result = FunExample::all($api);
+    $result = FunExample::all($conn);
     if($result->success)$items = $result->response;
 
     Header::initHeader($dir, "Proto API", TRUE, 'Examples', TRUE); 
