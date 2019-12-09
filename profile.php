@@ -14,17 +14,17 @@
             new Path(FALSE, "Home",     Nav::getHome($dir)),
             new Path(TRUE,  "Profile",  Nav::getURL($dir, 'profile.php'))
         );
-
+        $id = $auth->ID;
         Header::initHeader($dir, "$auth->username - Profile", TRUE, 'Profile', TRUE); //initialize HTML header elements with 'Profile' as Title
         ?>
             <div class="container padding-top">
               <?php Breadcrumb::initBreadcrumb($dir, $paths); ?>    
               <div class="card">
-                <form class="card-body" action="<?php Nav::echoURL($dir, "router/profile.php" . '?m=edit&id=' . $auth->ID ) ?>" method="POST">
+                <form class="card-body" action="<?php Nav::echoRouter($dir, "profile.php", "edit&id=$ID" ) ?>" method="POST">
                   <h5 class="card-title"><?php echo $auth->username ?>'s Profile</h5>
                   <div class="form-group">
                     <label for="exampleInputID">User ID</label>
-                    <input value="<?php echo $auth->ID ?>" type="number" name="ID" class="form-control" id="exampleInputID" placeholder="Enter ID" disabled>
+                    <input value="<?php echo $ID ?>" type="number" name="ID" class="form-control" id="exampleInputID" placeholder="Enter ID" disabled>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail">Email address</label>

@@ -26,8 +26,8 @@
                     Samples
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/examples/ex-api.php") ?>">Proto API Project</a>
-                    <a class="dropdown-item" href="<?php Nav::echoURL($dir, "page/examples/ex-off-db.php") ?>">Proto DB Project</a>
+                    <a class="dropdown-item" href="<?php Nav::echoPage($dir, "examples/ex-api.php") ?>">Proto API Project</a>
+                    <a class="dropdown-item" href="<?php Nav::echoPage($dir, "examples/ex-off-db.php") ?>">Proto DB Project</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown <?php self::printActive($active, 'More'); ?>">

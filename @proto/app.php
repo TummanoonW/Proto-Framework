@@ -6,8 +6,8 @@
         /* --- (DO NOT DELETE) Framework Configuration --*/
         public static $name = "Proto-Framework";
         public static $framework = "Proto-Framework";
-        public static $version = "5.3";
-        public static $lastUpdate = "2019/12/08 23:59:59";
+        public static $version = "5.4";
+        public static $lastUpdate = "2019/12/09 23:59:59";
         public static $platform = ["PHP", "HTML", "JS", "CSS", "MySQL", "Front-End", "Back-End"]; 
         
         //database configuration

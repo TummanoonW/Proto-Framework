@@ -15,7 +15,7 @@
               <br><br>
               <h4><?php echo App::$name; ?></h4>
           </div>
-          <form class="padding-top" action="<?php Nav::echoURL($dir, "router/auth.php" . "?m=login"); ?>" method="POST">
+          <form class="padding-top" action="<?php Nav::echoRouter($dir, "auth.php", "login"); ?>" method="POST">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

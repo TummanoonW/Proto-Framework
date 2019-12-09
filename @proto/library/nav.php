@@ -28,15 +28,15 @@
         /* --- navigate to specific URL // echo specific URL // return specific URL --- */
 
         /* --- navigate to specific URL // echo specific URL // return specific URL --- */
-        public static function gotoRouter($dir, $url){
-            header( "location: " .  $dir . 'router/' . $url );
+        public static function gotoRouter($dir, $url, $method){
+            header( "location: " .  $dir . 'router/' . $url . "?m=$method");
             exit();
         }
-        public static function echoRouter($dir, $file){
-            echo $dir . 'router/' . $file;
+        public static function echoRouter($dir, $file, $method){
+            echo $dir . 'router/' . $file . "?m=$method";
         }
-        public static function getRouter($dir, $file){
-            return $dir . 'router/' . $file;
+        public static function getRouter($dir, $file, $method){
+            return $dir . 'router/' . $file . "?m=$method";
         } 
         /* --- navigate to specific URL // echo specific URL // return specific URL --- */
 

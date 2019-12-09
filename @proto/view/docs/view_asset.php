@@ -63,8 +63,8 @@
           <div class="container mt-4">
             <h3 id="item-2" class="mt-4">Ende!</h3>
             <p>Now you are ready to code more with Proto-Framework.</p>
-            <a href="<?php Nav::echoURL($dir, "page/examples/ex-api.php") ?>" class="btn btn-outline-info">Proto API<i class="fas fa-server ml-2"></i></a>
-            <a href="<?php Nav::echoURL($dir, "page/examples/ex-off-db.php") ?>" class="btn btn-outline-success">Proto DB<i class="fas fa-database ml-2"></i></a>
+            <a href="<?php Nav::echoPage($dir, "examples/ex-api.php") ?>" class="btn btn-outline-info">Proto API<i class="fas fa-server ml-2"></i></a>
+            <a href="<?php Nav::echoPage($dir, "examples/ex-off-db.php") ?>" class="btn btn-outline-success">Proto DB<i class="fas fa-database ml-2"></i></a>
           </div>
 <?php
         }

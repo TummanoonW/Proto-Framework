@@ -42,7 +42,7 @@
             <?php Breadcrumb::initBreadcrumb($dir, $paths) ?>
             <h2><i class="fas fa-server mr-3"></i>Money Saving App</h2>
             <h5 class="mt-4">Proto API example (Back-End version)</h5>
-            <form action="<?php Nav::echoURL($dir, "router/example.php" . '?m=add') ?>" method="POST" class="input-group mb-3 mt-4">
+            <form action="<?php Nav::echoRouter($dir, "example.php", "add") ?>" method="POST" class="input-group mb-3 mt-4">
               <input name="text" type="text" class="form-control" placeholder="description" aria-label="description" aria-describedby="button-addon2">
               <input name="value" type="number" class="form-control" placeholder="saving / spending (&#3647;)" aria-label="saving / spending (&#3647;)" aria-describedby="button-addon2">
               <div class="input-group-append">

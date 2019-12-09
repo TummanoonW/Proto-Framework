@@ -9,7 +9,7 @@
             <div class="container mt-5">
                 <?php Breadcrumb::initBreadcrumb($dir, $paths) ?>
                 <div class="card">
-                    <form class="card-body" action="<?php Nav::echoURL($dir, "router/feedback.php" . '?m=submit' . $err) ?>" method="POST">
+                    <form class="card-body" action="<?php Nav::echoRouter($dir, "router/feedback.php", "submit$err") ?>" method="POST">
                         <div class="form-group">
                         <label for="exampleInputEmail">Email address</label>
                             <?php if(Session::checkUserExisted()){ ?>
