@@ -13,7 +13,7 @@
     switch($io->method){
         case 'login':
             $form = $io->post;
-            $result = FunAuth::login($conn, $form); //connect to Database requesting login method
+            $result = FunAuth::login($conn, $form->email, $form->password); //connect to Database requesting login method
             if($result->success){ //if the Database return result
                 $auth = $result->response;
                 Session::logIn($auth); //save login data to session
@@ -49,4 +49,6 @@
             Nav::gotoHome($dir); //return to home page
             break;
     }
+
+    $conn->closeConn();
     

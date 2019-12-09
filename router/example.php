@@ -35,3 +35,4 @@
             break;
     }
     
+    $conn->closeConn();

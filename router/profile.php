@@ -46,3 +46,5 @@
     }else{
         Nav::gotoHome($dir); //return to home page
     }
+
+    $conn->closeConn();
