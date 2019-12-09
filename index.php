@@ -55,7 +55,7 @@
             </div>
             <div class="col-12 col-md-4 p-3 p-md-5 bg-light border border-white">
               <i class="fas fa-code-branch text-info size32 mb-2"></i>                  
-              <h3>Bootstrap & jQuery</h3>
+              <h3>Bootstrap, Font-Awesome & jQuery</h3>
               <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique imperdiet nisi, eu tincidunt nulla vestibulum efficitur. Cras eget tempus ante, id pharetra urna. Integer.
               </p>
