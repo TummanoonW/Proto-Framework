@@ -13,10 +13,6 @@
                     
             	<title>Error - <?php echo $code ?></title>
                     
-            	<!-- Google font -->
-            	<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
-            	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:700,900" rel="stylesheet">
-                    
             	<!-- Custom stlylesheet -->
             	<style>
                     * {
@@ -58,7 +54,7 @@
                     }
                 
                     .notfound .notfound-404 h1 {
-                      font-family: 'Titillium Web', sans-serif;
+                      font-family: sans-serif;
                       font-size: 186px;
                       font-weight: 900;
                       margin: 0px;
@@ -67,14 +63,14 @@
                     }
                 
                     .notfound h2 {
-                      font-family: 'Titillium Web', sans-serif;
+                      font-family: sans-serif;
                       font-size: 26px;
                       font-weight: 700;
                       margin: 0;
                     }
                 
                     .notfound p {
-                      font-family: 'Montserrat', sans-serif;
+                      font-family: sans-serif;
                       font-size: 14px;
                       font-weight: 500;
                       margin-bottom: 0px;
@@ -82,7 +78,7 @@
                     }
                 
                     .notfound a {
-                      font-family: 'Titillium Web', sans-serif;
+                      font-family: sans-serif;
                       display: inline-block;
                       text-transform: uppercase;
                       color: #fff;
@@ -112,14 +108,6 @@
                       }
                     }
                 </style>
-            
-            	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-            	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-            	<!--[if lt IE 9]>
-            		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-            		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-            		<![endif]-->
-                
             </head>
                 
             <body>
