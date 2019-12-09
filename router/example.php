@@ -14,7 +14,7 @@
             $form = new Item($io->post);
             $result = Fun::create($conn, $table, $form); 
             if($result->success){ 
-                Nav::goto($dir, "page/examples/ex-api.php");
+                Nav::gotoPage($dir, "examples/ex-api.php");
             }else{
                 ErrorPage::initPage($dir, $result);
             }
@@ -24,7 +24,7 @@
             $id = $io->id;
             $result = Fun::delete($conn, $table, $id); 
             if($result->success){ 
-                Nav::goto($dir, "page/examples/ex-api.php"); 
+                Nav::gotoPage($dir, "examples/ex-api.php"); 
             }else{
                 ErrorPage::initPage($dir, $result);
             }
