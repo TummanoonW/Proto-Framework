@@ -6,6 +6,7 @@
         public static $version = "5.4";
         public static $lastUpdate = "2019/12/09 23:59:59";
         public static $platform = ["PHP", "HTML", "JS", "CSS", "MySQL", "Front-End", "Back-End"]; 
+        public static $debuggingMode = TRUE;
         
         //database configuration
         public static $CONFIG = array(
@@ -14,8 +15,6 @@
             'password'  => 'trialation27',
             'db'        => 'cp255290_proto'
         );
-        
-        public static $debuggingMode = TRUE;
         
         public static $icon_def = "asset/images/icons/def.svg";
         public static $thumb_def = "asset/images/thumbs/def.png";
