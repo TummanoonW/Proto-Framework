@@ -54,7 +54,7 @@
             
             <div class="list-group">
                 <?php foreach ($items as $key => $value) { ?>
-                    <a href="<?php Nav::echoURL($dir, "router/example.php" . "?m=remove&id=$value->ID") ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <a href="<?php Nav::echoRouter($dir, "example.php", "remove&id=$value->ID") ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                         <h6><?php echo $value->text ?>
                             <div class="pt-2"><small class="text-muted"><?php echo $value->date ?></small></div>
                         </h6>
@@ -72,11 +72,19 @@
                 <?php } ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center bg-info">
                     <h5 class="text-light">Total</h5>
-                    <h5><span class="badge badge-light badge-pill">&#3647; <?php echo self::sumValue($items) ?></span></h5>
+                    <h5><span class="badge badge-light badge-pill">&#3647; <?php echo sumValue($items) ?></span></h5>
                 </li>
             </div>
         </div>
     <?php
     Footer::initFooter($dir, TRUE); 
+
+    function sumValue($items){
+        $sum = 0;
+        foreach ($items as $key => $value) {
+            $sum = $sum + $value->value;
+        }
+        return $sum;
+    }
 
 
