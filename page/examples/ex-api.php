@@ -6,9 +6,9 @@
     $dir = "../../"; //current directory
     include_once $dir . '@proto/app.php'; 
     App::include_proto($dir); 
-    App::include_fun($dir, 'fun_example.php');
 
     $conn = new Connect(App::$CONFIG); //open API connection
+    $table = "example";
 
     $paths = array(
         new Path(FALSE, "Home", Nav::getHome($dir)),
@@ -31,7 +31,7 @@
         )
     );
 
-    $result = FunExample::all($conn);
+    $result = Fun::get($conn, $table);
     if($result->success)$items = $result->response;
 
     Header::initHeader($dir, "Proto API", TRUE, 'Examples', TRUE); 
