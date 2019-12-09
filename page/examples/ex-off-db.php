@@ -6,8 +6,7 @@
     $dir = "../../"; //current directory
     include_once $dir . '@proto/app.php';
     App::include_proto($dir);
-    App::include_view($dir, 'examples/view_off-db.php');
-
+    
     $paths = array(
         new Path(FALSE, "Home", Nav::getHome($dir)),
         new Path(FALSE, "Examples", ""),

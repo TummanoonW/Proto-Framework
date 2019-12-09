@@ -6,7 +6,6 @@
     $dir = "../../"; //current directory
     include_once $dir . '@proto/app.php'; 
     App::include_proto($dir); 
-    App::include_view($dir, 'examples/view_api.php');
     App::include_fun($dir, 'fun_example.php');
 
     $conn = new Connect(App::$CONFIG); //open API connection
