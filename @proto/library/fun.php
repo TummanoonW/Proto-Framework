@@ -47,7 +47,7 @@
         public static function getFiltered($conn, $table, $where, $limit, $offset, $orderBy, $desc){
             $query = $conn->scriptSelect(
                 $table,
-                "*",
+                "COUNT(*)",
                 $where,
                 $limit,
                 $offset,
